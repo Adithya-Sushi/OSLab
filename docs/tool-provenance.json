@@ -1,0 +1,11 @@
+{
+  "latex_compiler": {
+    "name": "Tectonic",
+    "version": "0.17.0+20260731",
+    "url": "https://github.com/tectonic-typesetting/tectonic/releases/download/continuous/tectonic-0.17.0%2B20260731-aarch64-apple-darwin.tar.gz",
+    "official_asset_digest": "sha256:24e921e05befa8f0be643f5c5b1404ecda9e5f983cd1421e01d9a281231e8159",
+    "archive_sha256": "24e921e05befa8f0be643f5c5b1404ecda9e5f983cd1421e01d9a281231e8159"
+  },
+  "ieee_class": "IEEEtran 1.8b, conference mode",
+  "analysis_environment": "requirements-analysis.txt"
+}

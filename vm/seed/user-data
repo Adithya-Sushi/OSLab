@@ -1,0 +1,33 @@
+#cloud-config
+package_update: true
+packages:
+  - build-essential
+  - python3
+  - util-linux
+  - procps
+  - sysstat
+  - kmod
+write_files:
+  - path: /etc/oslab-research-vm
+    content: |
+      Dedicated OSLab research guest. Guest-only zram provisioning is authorized.
+  - path: /etc/systemd/system/oslab-agent.service
+    content: |
+      [Unit]
+      Description=OSLab dedicated research guest agent
+      After=network-online.target
+      Wants=network-online.target
+      [Service]
+      Type=simple
+      Delegate=yes
+      ExecStart=/usr/bin/python3 /mnt/oslab/scripts/guest_agent.py
+      Restart=no
+      TimeoutStopSec=20
+      [Install]
+      WantedBy=multi-user.target
+runcmd:
+  - [mkdir, -p, /mnt/oslab]
+  - [sh, -c, 'echo "oslab /mnt/oslab virtiofs defaults 0 0" >> /etc/fstab']
+  - [mount, -t, virtiofs, oslab, /mnt/oslab]
+  - [systemctl, daemon-reload]
+  - [systemctl, enable, --now, oslab-agent.service]

@@ -1,0 +1,104 @@
+Implementation status for the final plan
+========================================
+Research owner: Adithya Sushil (24BCI0286)
+Initial implementation: 21 October 2026, Asia/Kolkata
+
+Implemented and exercised
+--------------------------
+1. Dedicated Debian 13 ARM64 guest, 3 GiB RAM and two vCPUs, using Apple's
+   Virtualization.framework. The backend is recorded instead of silently calling
+   it UTM. One fixed lz4 zram device is the only active swap backend.
+2. Environment manifest with kernel, packages, source hashes and Linux interface
+   checks. Required features are checked on the actual guest.
+3. C donors with seeded non-uniform structured/random contents, hot/cold regions,
+   delayed reuse, useful-work progress, phase events and end-to-end checksums.
+4. A checked C foreground service and scheduling-independent Python request
+   generator. Queueing, lateness, missed arrivals and failed replies are visible.
+5. A 250-ms collector preserving original counters and parsed time series.
+6. A serialized C memory.reclaim worker with registered donors, bounded requests,
+   duplicate-ID validation, errno, wall/CPU costs and overdue behavior.
+7. Trial lifecycle, delegated cgroup placement before allocation, unique attempt
+   directories, per-attempt provenance, cleanup, fresh-boot reset validation,
+   frozen randomized matrices and resumable execution.
+8. Matched no-action contrasts, seed-block bootstrap analysis, latency/progress
+   analysis, standalone scientific figures and a data-driven IEEEtran manuscript.
+
+Implemented as candidates; research validation is separate
+----------------------------------------------------------
+E1 stores a delayed isolated-probe estimate after quiet-window drift adjustment.
+It has explicit UNKNOWN handling for missing, old or flagged evidence. Its
+uncertainty penalty is a heuristic whose coverage must be measured.
+
+The common budget ledger and five candidate policies are implemented and checked
+with replay fixtures. Policy runs require documented Checkpoints A and B and
+calibrated application thresholds. Candidate policies have not been claimed as
+validated or superior merely because they compile and pass functional checks.
+
+Research phases
+-----------------
+The completed frozen discovery phase has 72 independent fresh-boot trials: three regimes,
+eight seed blocks, and no action/A/B arms. See its progress JSON and execution log
+for the current state; this file is not a substitute for the saved results.
+
+Checkpoint A passed: mean delayed donor contrasts were 28.96, 21.34 and 24.98 MiB
+in R1, R2 and R3. The held-out phase completed 74 attempts: 72 usable trials in
+24 complete matched blocks, plus two retained timing-invalid attempts. Only the
+two invalid arms were repeated, with the exact frozen source, settings and seeds.
+New seeds, reuse timings and interference allocations were used. The E1 test and
+its engineering gates were frozen before validation. Post-probe attribution is
+not advance prediction of the same probe.
+
+Checkpoint B failed. Mean absolute attribution errors were 3.89, 3.28 and
+116.54 MiB in R1/R2/R3. All eight material pairs per regime ranked correctly,
+but the heuristic envelope covered only 25%, 43.75% and 0% of reference effects.
+The estimator did not abstain under the tested interference. Coordinated policy
+evaluation therefore remains pending a declared estimator redesign and fresh
+validation; it was not run after the failed gate.
+
+The final decision and actual counts are generated in
+results/derived/EXPERIMENT_REPORT.txt and pilot-status.json. A failed gate stops
+the mechanism claim, as required by the implementation plan.
+
+Pending beyond the evidence gates
+----------------------------------
+- A validated useful estimator, where the candidate fails its held-out checks.
+- Coordinated-policy experiments and their future-action predictive evidence.
+- Active version-pinned Senpai and feedback-equipped DAMOS adapters and tuning.
+- The full SQLite application, confirmatory study, ablations and robustness suite.
+- An independent human reproduction.
+- Resolution of final-paper related-work overlap, including the ZramPool text.
+
+These items are not represented by fabricated measurements, approximate baseline
+labels, or a synthetic model of Linux. No dashboard, custom distro, GUI or appliance
+packaging is used to substitute for an unmet research gate.
+
+Declared differences from the plan
+-----------------------------------
+- Apple's native framework launches the VM because UTM was not installed.
+- Standard-library numerical primitives and a host-side plotting environment are
+  used instead of loading scientific libraries into the measured guest.
+- The foreground load is 200 requests/s (about 10% of the initial single-client
+  capacity estimate), selected for a stable initial measurement path. It does not
+  support claims about high-load service protection.
+- The calibration finding led to a cold-prefix/hot-suffix layout before discovery
+  was frozen. Both earlier calibration attempts remain saved and separately labeled.
+- Interference is currently controlled resident allocation, not every form of
+  compressed-pool mutation. The scope is explicit in the paper and configs.
+- Full confirmation is conditional on the pilot gates; it is not a fixed promised
+  outcome of starting the implementation.
+
+Post-pilot validity phase
+--------------------------
+A separate randomized eight-pair collector on/off study completed after the
+initial frozen research cohorts. Mean collector thread CPU was 0.4545 seconds
+per 40-second interval; incremental harness RSS growth was 7.4834 MiB. The mean
+foreground p99 on/off ratio was 1.0212, with a 95% paired bootstrap interval of
+[0.9923, 1.0607]; this does not establish zero overhead.
+The original runtime is preserved under docs/executed-source/. The sole
+post-study runtime extension adds named guest dispatch operations for that
+validity study and a complete read-only package listing. Its source change is
+recorded separately; it does not revise donor/foreground/collector/estimator code
+or tune the held-out model. The original runtime was restored for the technical
+repeats. All 146 research attempts and 16 validity attempts have distinct boot
+IDs, complete provenance, and no unresolved artifact-audit findings. Two earlier
+calibration attempts are retained separately. The dedicated VM is shut down.

@@ -1,0 +1,102 @@
+{
+  "measurement_seconds": 40,
+  "randomization_seed": 20261022,
+  "runs": [
+    {
+      "block": 0,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50000
+    },
+    {
+      "block": 0,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50000
+    },
+    {
+      "block": 1,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50002
+    },
+    {
+      "block": 1,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50002
+    },
+    {
+      "block": 2,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50004
+    },
+    {
+      "block": 2,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50004
+    },
+    {
+      "block": 3,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50006
+    },
+    {
+      "block": 3,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50006
+    },
+    {
+      "block": 4,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50008
+    },
+    {
+      "block": 4,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50008
+    },
+    {
+      "block": 5,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50010
+    },
+    {
+      "block": 5,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50010
+    },
+    {
+      "block": 6,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50012
+    },
+    {
+      "block": 6,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50012
+    },
+    {
+      "block": 7,
+      "collect": true,
+      "purpose": "observer_overhead",
+      "seed": 50014
+    },
+    {
+      "block": 7,
+      "collect": false,
+      "purpose": "observer_overhead",
+      "seed": 50014
+    }
+  ]
+}

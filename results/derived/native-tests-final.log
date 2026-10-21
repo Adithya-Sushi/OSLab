@@ -1,0 +1,31 @@
+cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/donor.c -o build/Darwin/donor
+cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/foreground.c -o build/Darwin/foreground
+cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/reclaim_worker.c -o build/Darwin/reclaim_worker
+test_bootstrap_runs (test_core.AnalysisTests.test_bootstrap_runs) ... ok
+test_irregular_time_weighting (test_core.AnalysisTests.test_irregular_time_weighting) ... ok
+test_missing_coverage_rejected (test_core.AnalysisTests.test_missing_coverage_rejected) ... ok
+test_rank_interval_small_sample (test_core.AnalysisTests.test_rank_interval_small_sample) ... ok
+test_budget_charges_probes_and_blocks_overlap (test_core.ControllerTests.test_budget_charges_probes_and_blocks_overlap) ... ok
+test_ineligible_donor_cannot_be_probed (test_core.ControllerTests.test_ineligible_donor_cannot_be_probed) ... ok
+test_interference_abstains (test_core.ControllerTests.test_interference_abstains) ... ok
+test_missing_stale_and_future_evidence_abstain (test_core.ControllerTests.test_missing_stale_and_future_evidence_abstain) ... ok
+test_overdue_never_admits_another (test_core.ControllerTests.test_overdue_never_admits_another) ... ok
+test_ranking_uses_delayed_conservative_gain_per_cost (test_core.ControllerTests.test_ranking_uses_delayed_conservative_gain_per_cost) ... ok
+test_time_overshoot_stops_later_work (test_core.ControllerTests.test_time_overshoot_stops_later_work) ... ok
+test_invalid_zram_layout (test_core.CounterTests.test_invalid_zram_layout) ... ok
+test_key_order_and_optional_absence (test_core.CounterTests.test_key_order_and_optional_absence) ... ok
+test_meminfo_units (test_core.CounterTests.test_meminfo_units) ... ok
+test_pressure_total_uses_actual_elapsed (test_core.CounterTests.test_pressure_total_uses_actual_elapsed) ... ok
+test_swap_devices (test_core.CounterTests.test_swap_devices) ... ok
+test_zram_footprint_includes_allocator (test_core.CounterTests.test_zram_footprint_includes_allocator) ... ok
+test_zram_future_fields_retained (test_core.CounterTests.test_zram_future_fields_retained) ... ok
+test_actuator_rejects_invalid_and_duplicate_ids (test_core.WorkloadTests.test_actuator_rejects_invalid_and_duplicate_ids) ... skipped 'Linux actuator protocol'
+test_donor_content_and_reuse_preserve_checksum (test_core.WorkloadTests.test_donor_content_and_reuse_preserve_checksum) ... ok
+test_foreground_scheduled_requests_validate (test_core.WorkloadTests.test_foreground_scheduled_requests_validate) ... ok
+test_invalid_memory_size_rejected (test_core.WorkloadTests.test_invalid_memory_size_rejected) ... ok
+test_non_cgroup_actuator_target_rejected (test_core.WorkloadTests.test_non_cgroup_actuator_target_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.861s
+
+OK (skipped=1)

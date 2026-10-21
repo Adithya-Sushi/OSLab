@@ -1,0 +1,212 @@
+ZramPool Public-Evidence Review and Pilot Decision
+================================================
+Date: 14 October 2026
+Decision: GO for a bounded donor-benefit falsification pilot only.
+Publication novelty: provisional; full ZramPool paper was NOT obtained.
+
+1. Access and evidence limits
+-----------------------------
+Paper: Yin Deng, Guoqi Xie, Chenglai Xiong, Sirong Zhao, Wei Ren, Kenli Li,
+"Zram Instance Pool Framework for Adaptive Memory Compression in
+Resource-Sensitive Embedded Operating Systems."
+IEEE TCAD 44(8), 2925-2938, August 2025; first published 23 January 2025.
+DOI: 10.1109/TCAD.2025.3533300
+Publisher: https://ieeexplore.ieee.org/document/10851391/
+
+The publisher browser explicitly reported no PDF access and stopped the HTML
+preview at "Sign in to Continue Reading." Available paper material comprised
+the abstract, first introduction paragraph, Table I, outline, and references.
+Sections II-V were not read. This is not a full-paper review.
+
+Checked the author university/lab pages, the lab homepage repository, Crossref,
+OpenAlex, Semantic Scholar, ResearchGate, and public GitHub repository/release
+listings. No accessible full manuscript was located. OpenAlex reported closed
+access with no repository full text; Semantic Scholar supplied no OA PDF URL;
+ResearchGate explicitly reported no full text. These are search findings, not
+proof that no author copy exists anywhere. No paywall was bypassed.
+
+The user reported no working institutional access and requested using public
+evidence. The resulting GO is a research-investment decision under this stated
+limitation, not clearance to claim that the final journal paper lacks a feature.
+
+2. What the public ZramPool material establishes
+------------------------------------------------
+The paper describes regression-based selection of compression-instance count
+to trade CPU utilization against compression speed, evaluated on an ARMv8
+Linux system with 8 GB RAM. Its public Table I compares sizes of 100-350 MB.
+The 100-MB row loses about 13.4% compression speed, so its average-oriented
+objective does not establish strict per-case service guarantees.
+The unseen evaluation cannot establish its workload coverage or causal controls.
+
+Public code: https://github.com/esnl-hnu/zrampool
+Inspected commit: cda6562a11b7ca4ca82098a3505f8f11d707baf9
+Commit date: 6 May 2023. This predates the journal paper. Repository association
+is supported by the lab identity, system description and matching mechanism;
+the code is not verified as the final artifact of the 2025 publication.
+
+The README specifies FT-2000/4, openEuler 20.03 LTS SP3, Linux 5.18.14 and zstd.
+It describes an eight-instance pool with a regression fit determining how many
+instances to use. The two objectives use different VM sysctl configurations.
+Source: https://github.com/esnl-hnu/zrampool/blob/cda6562a11b7ca4ca82098a3505f8f11d707baf9/README.md
+
+Code inspection, verified against stock Linux v5.18.14:
+  - init.sh lines 3-8 configure eight 200-M zram devices with equal priority.
+    This is configuration of compression destinations, not workload donors.
+  - get_free_page(), swapfile.c line 1048, reads global NR_FREE_PAGES.
+  - get_num_zram(), line 1056 in both objectives, maps a free-page-derived
+    comp_size proxy through fixed thresholds to an instance count from 1 to 8.
+    The regression expressions are comments; the executable paths use bins.
+    Do not misdescribe this code as measuring zram allocator bytes or learning
+    a new regression online on each donor.
+  - get_swap_pages(), lines 1090/1091, calls that count calculation and changes
+    requeueing among available swap devices via plist_requeue_mulzram().
+  - plist_requeue_mulzram(), lib/plist.c line 175, adjusts device-list rotation.
+  - page_alloc.c lines 8560-8564 change global reclaim watermarks. Thus a broad
+    distinction that ZramPool only changes a compressor would be inaccurate.
+
+The added paths in the inspected diffs have no donor-benefit history keyed by
+cgroup, intervention/no-action headroom estimator, uncertainty/abstention logic,
+or allocation of proactive reclaim requests among cgroups by those estimates.
+Existing upstream memcg accounting in these files is not such a policy.
+This absence statement is restricted to the inspected public source additions.
+
+Exact source snapshots, Git blob verification, provenance and readable diffs:
+  research/zrampool_review/source_manifest.json
+  research/zrampool_review/sources/
+  research/zrampool_review/upstream_v5.18.14/
+  research/zrampool_review/Objective1_vs_linux_v5.18.14.diff
+  research/zrampool_review/Objective2_vs_linux_v5.18.14.diff
+The Objective2 diff covers swapfile.c; its other files have identical blob IDs
+to Objective1 in the inspected repository tree. Source license notices remain.
+Nothing from that repository was built or run.
+
+3. Additional overlap found by following references
+---------------------------------------------------
+Wang, Tsai and Chang, EMSOFT/TECS 2021, DOI 10.1145/3477021:
+The publisher abstract already specifies joint page-activeness/compressibility
+selection and sampled compressibility prediction. Full PDF retrieval failed.
+Therefore compressibility-aware reclaim selection is not a residual invention;
+no absence conclusion about that paper follows from the abstract.
+https://doi.org/10.1145/3477021
+
+Wei, Tsou, Chen and Chang, EMSOFT/TECS 2025, appSwap,
+"App-aware Swap Resource Allocation for Enhancing User-perceived Latency on
+Mobile Devices," DOI 10.1145/3760385:
+Read the complete public publisher HTML, including design and evaluation.
+Section 3.2 classifies apps through working-set activation/refault ratios and
+routes pages to zram or flash. Section 3.3 uses per-app refault durations and
+adaptive dormancy thresholds for migration. Its periodic migrator caps work
+using free memory and page count. Section 3.4 isolates app swap streams and
+prefetch windows. Sections 4.3-4.5 evaluate components, overhead and sensitivity.
+These establish that per-app differentiation, delayed reuse feedback, shared
+compressed-space management and bounded migration are already known.
+Its examined design optimizes hybrid swap placement/migration/prefetch; it does
+not present the proposed intervention-estimated headroom-per-reclaim-cost ranking
+for choosing resident donor cgroups under one proactive work budget.
+https://dl.acm.org/doi/10.1145/3760385
+
+4. Exactly what remains
+-----------------------
+Candidate claim:
+"An uncertainty-aware estimator of the sustained marginal guest-headroom
+benefit of reclaiming from each cgroup sharing a fixed compressed-swap pool,
+used to allocate one global proactive reclaim-work budget among donors."
+
+Its necessary distinction is the estimated RESPONSE TO AN ACTION, after
+compressed-store cost and later re-access, rather than app identity, free-page
+level, pressure, page age or compression ratio alone. Keep app latency and
+background useful progress as constraints. They are supporting requirements.
+
+ZramPool's public code allocates compression destinations; this candidate
+allocates reclaim work among source workloads. The mechanisms could coexist.
+This is a scoped differentiator, not evidence of superiority over ZramPool.
+
+The algorithmic ideas of causal contrasts, uncertainty bounds, benefit/cost
+ranking and greedy allocation are established. The possible systems contribution
+is a credible low-overhead estimator plus demonstrated operational advantage.
+It must beat simple extensions; a ratio formula with thresholds is insufficient.
+
+This remains an incremental research hypothesis. It is not yet a publishable
+result, and neither the full ZramPool paper nor universal firstness is cleared.
+Obtain the final paper before writing an absence/superiority claim about it.
+
+5. Bounded pilot: approximately one week of work
+------------------------------------------------
+Use the existing 16-GiB Apple Silicon host and one headless Debian ARM64 guest
+at 3 GiB RAM and 2 vCPUs. Use one fixed zram device/compressor, no disk swap,
+and two private-anonymous donor cgroups plus one scheduled-request foreground
+service. C for donors/actuator, Python for orchestration/analysis, proc/cgroup
+counters and zram mm_stat suffice. Hardware PMU access is not a prerequisite.
+
+Step A: establish the measurement floor and actuator behavior (1-2 days).
+  Verify interfaces/configuration, workload checksums, scheduling-independent
+  request latency, clean resets and EAGAIN/over-or-under-reclaim recording.
+  Record MemAvailable, MemFree, residency, mem_used_total, refaults, useful donor
+  progress, guest CPU time and actuator wall/CPU time. Never double-subtract
+  zram allocation from MemAvailable or equate requested bytes with freed bytes.
+
+Step B: randomized reference effects (1-2 days).
+  Start with a fixed 32-MiB request and 20-s delayed observation horizon.
+  Use fresh matched trials for action on A, action on B and no action.
+  Start with 8 independent seed blocks per regime, preserving every run.
+  Regimes: matched footprint/age/pressure with different compressibility;
+  changed re-access behavior; unrelated shared-pool allocation/reclaim activity.
+  Keep phase schedules identical within each block and randomize arm order.
+  Reset between arms; a later no-action window is not an undo of an earlier probe.
+
+Step C: an estimator that can be disproved (1-2 days).
+  Fit a small transparent telemetry-based predictor of delayed headroom change;
+  compare it with last-probe gain and age/refault-only predictors. Candidate
+  features include prior isolated probe effects/costs and recent counter drift.
+  Use training blocks only to set coefficients and abstention thresholds.
+  Held-out matched trials supply reference effects for scoring ONLY; the online
+  estimator receives neither those outcomes nor donor data/phase labels.
+  Measure sign/rank accuracy, prediction error, uncertainty calibration, harmful
+  false positives, and abstention rate under interference. Do not claim exact
+  per-cgroup ownership of shared zram allocator pages using aggregate counters.
+
+Step D: donor choice under a common budget (1-2 days).
+  Keep request size fixed initially so adaptive batching cannot explain a win.
+  Compare round-robin, age/refault ranking, an immediate-gain gate and delayed
+  benefit ranking using the same collector/actuator and eligibility constraints.
+  Give all policies the same total requested-byte cap, one request in flight,
+  and the same accumulated actuator-time cap over a run. Charge initial probes
+  and re-probes to those caps. Report actual consumption as well as allowed caps.
+  A synchronous call can exceed the remaining time or requested-byte estimate;
+  record overshoot and stop new requests rather than claiming a hard CPU bound.
+  Repeat with an unseen donor-ranking reversal and shared-pool interference.
+
+Pilot targets, to freeze before outcome inspection:
+  - Establish a delayed donor-benefit gap above the no-action noise floor;
+    an initial practical target is at least 8 MiB for a 32-MiB probe.
+  - On held-out blocks, rank materially different donors correctly in at least
+    80% of decisions, with confidence intervals and explicit abstention coverage.
+    Scoring only a tiny easy subset while abstaining everywhere else is failure.
+  - Show repeatable headroom benefit at equal resource caps without violating
+    the same predeclared foreground p99 and donor-progress criteria. Compare
+    actual costs; a policy may win simply by spending more of its allowed cap.
+  - Show useful behavior after reversal and under interference. If attribution
+    remains unreliable or simple refault/gain-gate policies match the result,
+    stop the proposed mechanism and retain a characterization report.
+These are engineering gates for this pilot, not published empirical findings or
+universal numerical standards. Report continuous tradeoffs, not just pass/fail.
+
+6. What a successful pilot authorizes next
+------------------------------------------
+Only then build a coordinated controller and run actual active Senpai, DAMOS
+with identical application feedback, simple gain-gated existing policies, and
+the same estimator with round-robin. Add the strong age/refault comparator
+motivated by appSwap. Tune policies with equivalent budgets and hold out tests.
+
+A bare multi-zram configuration is not a faithful ZramPool reproduction. Its
+old kernel patch and fitted constants require porting and recalibration; do not
+use a nonfunctional or casually approximated baseline as evidence of a win.
+ZramPool and appSwap are mechanism-level comparisons initially. Direct
+superiority claims require faithful implementations and aligned objectives.
+
+If the pilot passes, a scoped systems workshop/short paper is worth pursuing.
+A major systems-paper claim still requires stronger mechanism and generality.
+If it fails, additional GUI, distro work or hardware cannot create novelty.
+
+No pilot, workload, controller or guest configuration was implemented in this
+review. Only public source snapshots, diffs and planning/audit text were saved.

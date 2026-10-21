@@ -1,0 +1,8 @@
+HTTP/1.1 302 Found
+Date: Tue, 20 Oct 2026 20:34:23 GMT
+Server: Apache/2.4.68 (Unix)
+Location: https://gemmei.ftp.acc.umu.se/images/cloud/trixie/latest/debian-13-generic-arm64.qcow2
+Cache-Control: max-age=300
+Expires: Tue, 20 Oct 2026 20:39:23 GMT
+Content-Type: text/html; charset=iso-8859-1
+

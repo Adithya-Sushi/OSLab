@@ -1,0 +1,104 @@
+OSLab: Initial Experiment Report
+================================
+Adithya Sushil | 24BCI0286
+21 October 2026, Asia/Kolkata
+
+Research status: stopped_at_checkpoint_B
+
+Environment: Debian 13 ARM64; Linux 6.12.113+deb13-arm64; 3 GiB RAM;
+two vCPUs; Apple Virtualization.framework; one 1-GiB logical lz4 zram device;
+no zswap or writeback. Host: Apple Silicon Mac, 16 GiB RAM.
+
+All reported observations come from executed Linux guest workloads.
+Synthetic fixtures are used only for implementation verification.
+
+Discovery phase
+---------------
+Selected attempted trials: 72
+Complete matched seed blocks: 24
+Failed attempts: 0
+Technical-invalid attempts: 0
+Attempts with adverse outcomes: 0
+
+R1: n=8 independent matched blocks.
+  Mean prespecified donor-benefit gap: 28.964 MiB.
+  95% seed-block bootstrap interval: [16.755, 43.339] MiB.
+  No-action headroom-change SD: 2.1634282683688824 MiB.
+R2: n=8 independent matched blocks.
+  Mean prespecified donor-benefit gap: 21.337 MiB.
+  95% seed-block bootstrap interval: [15.503, 27.701] MiB.
+  No-action headroom-change SD: 1.3029220797670356 MiB.
+R3: n=8 independent matched blocks.
+  Mean prespecified donor-benefit gap: 24.980 MiB.
+  95% seed-block bootstrap interval: [19.007, 31.926] MiB.
+  No-action headroom-change SD: 1.4731426757049768 MiB.
+
+R1 compares structured versus random data; R2 compares a donor that
+keeps its cold region unused with one that reuses it after dispatch;
+R3 adds a separately controlled resident-memory allocation.
+
+Headroom is a 20-second time-weighted mean starting at request dispatch.
+Each donor effect subtracts a matched no-action before/after contrast.
+The A/B difference cancels the common no-action arm. Requested bytes are
+control inputs and are not reported as measured freed bytes.
+
+Application outcomes
+--------------------
+Post-dispatch offered foreground requests: 288000
+Failed/missed/incorrect replies: 0
+  R1/A: mean run p99=3.799 ms; mean actuator wall=36.075 ms; n=8.
+  R1/B: mean run p99=3.904 ms; mean actuator wall=35.941 ms; n=8.
+  R1/none: mean run p99=3.776 ms; mean actuator wall=0.000 ms; n=8.
+  R2/A: mean run p99=4.008 ms; mean actuator wall=28.961 ms; n=8.
+  R2/B: mean run p99=4.216 ms; mean actuator wall=30.228 ms; n=8.
+  R2/none: mean run p99=4.313 ms; mean actuator wall=0.000 ms; n=8.
+  R3/A: mean run p99=3.953 ms; mean actuator wall=36.001 ms; n=8.
+  R3/B: mean run p99=3.936 ms; mean actuator wall=33.032 ms; n=8.
+  R3/none: mean run p99=3.975 ms; mean actuator wall=0.000 ms; n=8.
+
+Estimator validation
+--------------------
+Held-out reference attempts, including retained technical failures: 74
+Usable trials in complete matched blocks: 72
+Retained technical-invalid attempts: 2
+  R1: mean absolute error=3.892347633712319 MiB; ranking accuracy=1.0; known coverage=1.000; heuristic-envelope coverage=0.25.
+  R2: mean absolute error=3.278488608173208 MiB; ranking accuracy=1.0; known coverage=1.000; heuristic-envelope coverage=0.4375.
+  R3: mean absolute error=116.5376588156761 MiB; ranking accuracy=1.0; known coverage=1.000; heuristic-envelope coverage=0.0.
+These estimates use observations after a probe. Advance prediction of
+that same probe or future controller superiority has not been established.
+
+Decision and remaining work
+---------------------------
+  R1: uncertainty envelope does not cover reference effects reliably
+  R2: uncertainty envelope does not cover reference effects reliably
+  R3: benefit error exceeds practical 8-MiB resolution
+  R3: uncertainty envelope does not cover reference effects reliably
+Donor choice is useful in the tested regimes, but the baseline E1 estimator
+does not meet the held-out usefulness/reliability gate. The plan stops the
+mechanism claim pending estimator redesign. No policy-superiority claim
+or strong-baseline improvement is made.
+
+Collector overhead validity study
+---------------------------------
+Matched fresh-boot collector on/off pairs: 8
+  collector_thread_cpu_seconds: mean=0.454518171; 95% block-bootstrap interval=[0.43589378675, 0.4738638371250001]; n=8.
+  extra_harness_cpu_seconds: mean=0.44932012499999974; 95% block-bootstrap interval=[0.4000079999999998, 0.4949868749999997]; n=8.
+  extra_harness_rss_growth_mib: mean=7.4833984375; 95% block-bootstrap interval=[7.46337890625, 7.50634765625]; n=8.
+  foreground_p99_ratio: mean=1.021184489108207; 95% block-bootstrap interval=[0.9922928823539475, 1.0607024596188648]; n=8.
+The collector's CPU clock is measured directly; incremental harness
+RSS/CPU and application latency are compared with a matched no-collector run.
+
+Active Senpai/DAMOS comparisons, SQLite validation, full confirmatory runs,
+independent reproduction and final related-work
+clearance remain pending. These have not been replaced by simulated results.
+
+Artifact verification
+---------------------
+Linux functional suite: 23 tests passed (saved guest log).
+Portable native suite: 23 tests, one Linux-only skip (saved log).
+Analysis pairing/error-handling checks: see analysis-tests-final.log.
+Raw evidence: results/raw/<attempt>/; randomized order and host snapshots:
+configs/*-matrix-progress.json; estimator decisions: estimator-validation.json.
+
+Calibration attempts are separately labeled and excluded from discovery.
+No cgroup-owned physical zram bytes or macOS RAM return is inferred.

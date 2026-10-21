@@ -1,0 +1,694 @@
+{
+  "kind": "matched_collector_overhead",
+  "limitations": [
+    "Incremental harness costs include interactions with load generation and logging.",
+    "Direct collector thread CPU is read from its Linux pthread CPU clock.",
+    "This separate validity phase is not used to tune the frozen discovery/validation estimator."
+  ],
+  "paired_differences": [
+    {
+      "block": 0,
+      "collector_thread_cpu_seconds": 0.5029990940000001,
+      "extra_harness_cpu_seconds": 0.551831,
+      "extra_harness_rss_growth_mib": 7.48828125,
+      "foreground_p99_ratio": 0.9815280540149107
+    },
+    {
+      "block": 1,
+      "collector_thread_cpu_seconds": 0.43843928100000007,
+      "extra_harness_cpu_seconds": 0.4637589999999996,
+      "extra_harness_rss_growth_mib": 7.546875,
+      "foreground_p99_ratio": 1.0063537299089862
+    },
+    {
+      "block": 2,
+      "collector_thread_cpu_seconds": 0.48224795600000003,
+      "extra_harness_cpu_seconds": 0.45534500000000033,
+      "extra_harness_rss_growth_mib": 7.453125,
+      "foreground_p99_ratio": 1.1366314315917272
+    },
+    {
+      "block": 3,
+      "collector_thread_cpu_seconds": 0.45095636200000006,
+      "extra_harness_cpu_seconds": 0.48830999999999936,
+      "extra_harness_rss_growth_mib": 7.4765625,
+      "foreground_p99_ratio": 0.9935980928302803
+    },
+    {
+      "block": 4,
+      "collector_thread_cpu_seconds": 0.463659482,
+      "extra_harness_cpu_seconds": 0.5038809999999998,
+      "extra_harness_rss_growth_mib": 7.45703125,
+      "foreground_p99_ratio": 1.0081483454570301
+    },
+    {
+      "block": 5,
+      "collector_thread_cpu_seconds": 0.455134908,
+      "extra_harness_cpu_seconds": 0.3386760000000004,
+      "extra_harness_rss_growth_mib": 7.5078125,
+      "foreground_p99_ratio": 0.9672349598661957
+    },
+    {
+      "block": 6,
+      "collector_thread_cpu_seconds": 0.432378509,
+      "extra_harness_cpu_seconds": 0.4470969999999994,
+      "extra_harness_rss_growth_mib": 7.48828125,
+      "foreground_p99_ratio": 1.033660509764982
+    },
+    {
+      "block": 7,
+      "collector_thread_cpu_seconds": 0.41032977600000003,
+      "extra_harness_cpu_seconds": 0.345661999999999,
+      "extra_harness_rss_growth_mib": 7.44921875,
+      "foreground_p99_ratio": 1.0423207894315434
+    }
+  ],
+  "runs": [
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225525Z-overhead-7ef7114e",
+      "block": 5,
+      "boot_id": "a47a617c-13b8-4aca-875a-9afbc2eef077",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.357011,
+        "rss": 30273536,
+        "t": 52.088350691
+      },
+      "epoch": 7.079506002,
+      "harness_cpu_seconds": 3.762224,
+      "harness_rss_growth_bytes": 4259840,
+      "measurement_seconds": 39.992321644,
+      "progress_units_per_second": {
+        "A": 12793.915811209323,
+        "B": 12794.84814349026
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.009917088999998214,
+        "offered": 8000,
+        "p50_seconds": 0.002527454999999179,
+        "p99_seconds": 0.003925280709999655
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.594787,
+        "rss": 26013696,
+        "t": 12.096029047
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224710Z-overhead-bbe35ac1",
+      "block": 1,
+      "boot_id": "f3815145-c135-418c-a0cf-93a95a5e9f28",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.43843928100000007,
+      "end": {
+        "collector_cpu": 0.513726988,
+        "cpu": 5.800587999999999,
+        "rss": 39452672,
+        "t": 52.644077149
+      },
+      "epoch": 7.637703127,
+      "harness_cpu_seconds": 4.09735,
+      "harness_rss_growth_bytes": 12156928,
+      "measurement_seconds": 40.001837353,
+      "progress_units_per_second": {
+        "A": 12799.955761373409,
+        "B": 12800.103490254833
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.017155807999998274,
+        "offered": 8000,
+        "p50_seconds": 0.0025325159999969316,
+        "p99_seconds": 0.003830895670003365
+      },
+      "start": {
+        "collector_cpu": 0.07528770700000001,
+        "cpu": 1.703238,
+        "rss": 27295744,
+        "t": 12.642239796
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224913Z-overhead-e1de861c",
+      "block": 2,
+      "boot_id": "b2c4e253-995f-4b74-8962-39283ccadb3d",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.1863,
+        "rss": 30195712,
+        "t": 52.201430774
+      },
+      "epoch": 7.199608502,
+      "harness_cpu_seconds": 3.732469,
+      "harness_rss_growth_bytes": 4251648,
+      "measurement_seconds": 39.994471478,
+      "progress_units_per_second": {
+        "A": 12799.908186638973,
+        "B": 12799.966297208497
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.015176049000000802,
+        "offered": 8000,
+        "p50_seconds": 0.00244948949999646,
+        "p99_seconds": 0.0038849697600008073
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.453831,
+        "rss": 25944064,
+        "t": 12.206959296
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225015Z-overhead-f6b88a78",
+      "block": 3,
+      "boot_id": "51ef6e15-2383-4987-8786-1cba392f4ef9",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.45095636200000006,
+      "end": {
+        "collector_cpu": 0.5337702790000001,
+        "cpu": 5.755858999999999,
+        "rss": 39755776,
+        "t": 51.741644565
+      },
+      "epoch": 6.727605627,
+      "harness_cpu_seconds": 4.079898999999999,
+      "harness_rss_growth_bytes": 12132352,
+      "measurement_seconds": 40.013322436,
+      "progress_units_per_second": {
+        "A": 12799.989176138877,
+        "B": 12799.905105321996
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.024459846999995705,
+        "offered": 8000,
+        "p50_seconds": 0.00247274349999671,
+        "p99_seconds": 0.0037946592199953246
+      },
+      "start": {
+        "collector_cpu": 0.082813917,
+        "cpu": 1.6759600000000001,
+        "rss": 27623424,
+        "t": 11.728322129
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225628Z-overhead-505aebe2",
+      "block": 6,
+      "boot_id": "617d28f5-5188-492e-942d-268639174c99",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.432378509,
+      "end": {
+        "collector_cpu": 0.513594411,
+        "cpu": 5.643997,
+        "rss": 39919616,
+        "t": 52.449844524
+      },
+      "epoch": 7.439980461,
+      "harness_cpu_seconds": 3.9994879999999995,
+      "harness_rss_growth_bytes": 12091392,
+      "measurement_seconds": 39.991655477,
+      "progress_units_per_second": {
+        "A": 12799.985325495225,
+        "B": 12800.002300355063
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.003557393999997771,
+        "offered": 8000,
+        "p50_seconds": 0.0024273695000012196,
+        "p99_seconds": 0.003740893699995844
+      },
+      "start": {
+        "collector_cpu": 0.081215902,
+        "cpu": 1.644509,
+        "rss": 27828224,
+        "t": 12.458189047
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225729Z-overhead-969702b3",
+      "block": 6,
+      "boot_id": "07f92993-6b7f-48ba-acaf-bce16917873c",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.165573,
+        "rss": 30175232,
+        "t": 51.892317732
+      },
+      "epoch": 6.891657377,
+      "harness_cpu_seconds": 3.552391,
+      "harness_rss_growth_bytes": 4239360,
+      "measurement_seconds": 39.995467894,
+      "progress_units_per_second": {
+        "A": 12799.961344204668,
+        "B": 12800.01415257673
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.0020157120000003914,
+        "offered": 8000,
+        "p50_seconds": 0.0023957020000029416,
+        "p99_seconds": 0.003619073830000908
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.613182,
+        "rss": 25935872,
+        "t": 11.896849838
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224505Z-overhead-e93f924f",
+      "block": 0,
+      "boot_id": "c5872b33-bf1e-4a86-89e7-b10d3da6a01c",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.5029990940000001,
+      "end": {
+        "collector_cpu": 0.5912245110000001,
+        "cpu": 5.968618,
+        "rss": 39702528,
+        "t": 51.75405145
+      },
+      "epoch": 6.742970294,
+      "harness_cpu_seconds": 4.269339,
+      "harness_rss_growth_bytes": 12091392,
+      "measurement_seconds": 40.00977057,
+      "progress_units_per_second": {
+        "A": 12800.063235545796,
+        "B": 12799.56313640659
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.011977177999998645,
+        "offered": 8000,
+        "p50_seconds": 0.002503700999998415,
+        "p99_seconds": 0.003831239539999683
+      },
+      "start": {
+        "collector_cpu": 0.088225417,
+        "cpu": 1.6992790000000002,
+        "rss": 27611136,
+        "t": 11.74428088
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225831Z-overhead-592f683b",
+      "block": 7,
+      "boot_id": "de42541e-f5b2-4e9b-9eae-d14951dae5e3",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.41032977600000003,
+      "end": {
+        "collector_cpu": 0.489214389,
+        "cpu": 5.642956,
+        "rss": 39837696,
+        "t": 52.530169566
+      },
+      "epoch": 7.528873669,
+      "harness_cpu_seconds": 3.952629,
+      "harness_rss_growth_bytes": 12115968,
+      "measurement_seconds": 39.999099685999994,
+      "progress_units_per_second": {
+        "A": 12796.60736309096,
+        "B": 12796.475579263153
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.009660227000004795,
+        "offered": 8000,
+        "p50_seconds": 0.002442096999997645,
+        "p99_seconds": 0.0036873722800000058
+      },
+      "start": {
+        "collector_cpu": 0.078884613,
+        "cpu": 1.690327,
+        "rss": 27721728,
+        "t": 12.53106988
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225219Z-overhead-299985ef",
+      "block": 4,
+      "boot_id": "67f029fc-c81a-4502-8edc-e2e7dfadd575",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.463659482,
+      "end": {
+        "collector_cpu": 0.542891232,
+        "cpu": 5.799195,
+        "rss": 39473152,
+        "t": 52.180277107
+      },
+      "epoch": 7.17865196,
+      "harness_cpu_seconds": 4.150327,
+      "harness_rss_growth_bytes": 12107776,
+      "measurement_seconds": 39.999024477000006,
+      "progress_units_per_second": {
+        "A": 12800.067078458758,
+        "B": 12799.942716688609
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.002180938000002186,
+        "offered": 8000,
+        "p50_seconds": 0.002584472499997048,
+        "p99_seconds": 0.003959809859994152
+      },
+      "start": {
+        "collector_cpu": 0.07923175,
+        "cpu": 1.648868,
+        "rss": 27365376,
+        "t": 12.18125263
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224606Z-overhead-0d918533",
+      "block": 1,
+      "boot_id": "b6bf58f4-6077-49e8-b87c-b0a023bbbefd",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.249096,
+        "rss": 29839360,
+        "t": 51.952177607
+      },
+      "epoch": 6.944207794,
+      "harness_cpu_seconds": 3.633591,
+      "harness_rss_growth_bytes": 4243456,
+      "measurement_seconds": 39.989840644000004,
+      "progress_units_per_second": {
+        "A": 12799.988695153157,
+        "B": 12799.994689318819
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.01170383700000066,
+        "offered": 8000,
+        "p50_seconds": 0.002570241499999071,
+        "p99_seconds": 0.003806708870001235
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.615505,
+        "rss": 25595904,
+        "t": 11.962336963
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225933Z-overhead-bf722272",
+      "block": 7,
+      "boot_id": "90bcd5c0-9f8d-4a2c-9d30-88464eac3457",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.151298000000001,
+        "rss": 30023680,
+        "t": 52.527714858
+      },
+      "epoch": 7.510186669,
+      "harness_cpu_seconds": 3.606967000000001,
+      "harness_rss_growth_bytes": 4304896,
+      "measurement_seconds": 40.00319781100001,
+      "progress_units_per_second": {
+        "A": 12799.983395838886,
+        "B": 12799.93230295911
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.00849631199999834,
+        "offered": 8000,
+        "p50_seconds": 0.002414284500000363,
+        "p99_seconds": 0.0035376558899981357
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.544331,
+        "rss": 25718784,
+        "t": 12.524517047
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225321Z-overhead-d77f5612",
+      "block": 4,
+      "boot_id": "329dff80-7ecc-4f9d-83d0-c01ce1bf8444",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.2019,
+        "rss": 30228480,
+        "t": 52.565714858
+      },
+      "epoch": 7.557530211,
+      "harness_cpu_seconds": 3.646446,
+      "harness_rss_growth_bytes": 4288512,
+      "measurement_seconds": 40.004054186,
+      "progress_units_per_second": {
+        "A": 12783.996172381323,
+        "B": 12783.902987252557
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.05140202100000124,
+        "offered": 8000,
+        "p50_seconds": 0.002616865000000246,
+        "p99_seconds": 0.003927804750003361
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.555454,
+        "rss": 25939968,
+        "t": 12.561660672
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224404Z-overhead-a7a320be",
+      "block": 0,
+      "boot_id": "8fb18b64-842e-404f-9a69-64f4511d8d85",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.583706,
+        "rss": 30097408,
+        "t": 52.990520038
+      },
+      "epoch": 7.989683877,
+      "harness_cpu_seconds": 3.7175080000000005,
+      "harness_rss_growth_bytes": 4239360,
+      "measurement_seconds": 39.988537908,
+      "progress_units_per_second": {
+        "A": 12800.036335315204,
+        "B": 12800.029522280434
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.0032077539999981752,
+        "offered": 8000,
+        "p50_seconds": 0.0025934149999979894,
+        "p99_seconds": 0.0039033418599989213
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.866198,
+        "rss": 25858048,
+        "t": 13.00198213
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225117Z-overhead-9532940d",
+      "block": 3,
+      "boot_id": "e50b4539-f730-4438-9d2e-70778c812f50",
+      "collect": false,
+      "collector_thread_cpu_seconds": null,
+      "end": {
+        "collector_cpu": null,
+        "cpu": 5.140498,
+        "rss": 30236672,
+        "t": 52.34241269
+      },
+      "epoch": 7.333233793,
+      "harness_cpu_seconds": 3.591589,
+      "harness_rss_growth_bytes": 4292608,
+      "measurement_seconds": 40.007766269,
+      "progress_units_per_second": {
+        "A": 12800.03645447384,
+        "B": 12800.020533363306
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.007669390000003773,
+        "offered": 8000,
+        "p50_seconds": 0.002456680500003472,
+        "p99_seconds": 0.00381910880000401
+      },
+      "start": {
+        "collector_cpu": null,
+        "cpu": 1.548909,
+        "rss": 25944064,
+        "t": 12.334646421
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T225423Z-overhead-7ca897bd",
+      "block": 5,
+      "boot_id": "5747e9d0-bbe2-44ce-a387-cef4be2b265f",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.455134908,
+      "end": {
+        "collector_cpu": 0.527253439,
+        "cpu": 5.715873,
+        "rss": 39485440,
+        "t": 52.448642684
+      },
+      "epoch": 7.443992169,
+      "harness_cpu_seconds": 4.1009,
+      "harness_rss_growth_bytes": 12132352,
+      "measurement_seconds": 39.999725346,
+      "progress_units_per_second": {
+        "A": 12800.065507359235,
+        "B": 12800.003629922396
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.003288921999999417,
+        "offered": 8000,
+        "p50_seconds": 0.0025289624999995652,
+        "p99_seconds": 0.0037966687300000686
+      },
+      "start": {
+        "collector_cpu": 0.072118531,
+        "cpu": 1.614973,
+        "rss": 27353088,
+        "t": 12.448917338
+      },
+      "status": "complete"
+    },
+    {
+      "adverse_outcomes": [],
+      "attempt": "20261020T224812Z-overhead-92409fd2",
+      "block": 2,
+      "boot_id": "4c479609-2d43-48c1-978b-ee2b818cc94e",
+      "collect": true,
+      "collector_thread_cpu_seconds": 0.48224795600000003,
+      "end": {
+        "collector_cpu": 0.5604081280000001,
+        "cpu": 5.817759000000001,
+        "rss": 39800832,
+        "t": 51.823877524
+      },
+      "epoch": 6.812680835,
+      "harness_cpu_seconds": 4.187814,
+      "harness_rss_growth_bytes": 12066816,
+      "measurement_seconds": 40.003653144,
+      "progress_units_per_second": {
+        "A": 12799.930371508084,
+        "B": 12800.01707482139
+      },
+      "service": {
+        "completed": 8000,
+        "failed_or_missed": 0,
+        "max_generator_lateness_seconds": 0.0023999289999956375,
+        "offered": 8000,
+        "p50_seconds": 0.002581415999998171,
+        "p99_seconds": 0.004415778740000286
+      },
+      "start": {
+        "collector_cpu": 0.078160172,
+        "cpu": 1.629945,
+        "rss": 27734016,
+        "t": 11.82022438
+      },
+      "status": "complete"
+    }
+  ],
+  "summary": {
+    "collector_thread_cpu_seconds": {
+      "ci95": [
+        0.43589378675,
+        0.4738638371250001
+      ],
+      "mean": 0.454518171,
+      "n": 8
+    },
+    "extra_harness_cpu_seconds": {
+      "ci95": [
+        0.4000079999999998,
+        0.4949868749999997
+      ],
+      "mean": 0.44932012499999974,
+      "n": 8
+    },
+    "extra_harness_rss_growth_mib": {
+      "ci95": [
+        7.46337890625,
+        7.50634765625
+      ],
+      "mean": 7.4833984375,
+      "n": 8
+    },
+    "foreground_p99_ratio": {
+      "ci95": [
+        0.9922928823539475,
+        1.0607024596188648
+      ],
+      "mean": 1.021184489108207,
+      "n": 8
+    }
+  }
+}

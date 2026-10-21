@@ -1,0 +1,879 @@
+{
+  "interpretation": "Exploratory sensitivity of the same discovery blocks; horizons are correlated and do not create additional independent replicates. The 20-s endpoint remains primary. The 24-s endpoint avoids workload shutdown/checksum activity at 25 s after dispatch.",
+  "paired": [
+    {
+      "block": 0,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 46.964784673246186
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 47.20423172986557
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 47.06454999014818
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 45.793101494393795
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 45.366142104692926
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 10.068943064100722
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 9.99691694421358
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 9.67693314594203
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 10.021408464026536
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 10.30077003751785
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 49.49316332559465
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 52.67748291618841
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 61.14629628124885
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 67.17981819765123
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 66.7428728776174
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 10.83555012346801
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 11.198371246136276
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 11.84159622311995
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 13.187718804502992
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 13.745806067366857
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 37.31657146272232
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 37.64478087559269
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 37.8449705766011
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 38.28498848884033
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 38.425384613641654
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 15.850332817517028
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 16.50981208185226
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 16.883033264966343
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 16.850471629465346
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 16.762519891083684
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 29.51401898183758
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 30.161690347988724
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 30.475192603437108
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 30.842137036445365
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 30.938258724545904
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 2,
+      "regime": "R1",
+      "signed_gap_mib": 11.270011610287838
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 5,
+      "regime": "R1",
+      "signed_gap_mib": 10.793957690368188
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 10,
+      "regime": "R1",
+      "signed_gap_mib": 10.250360937727692
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 20,
+      "regime": "R1",
+      "signed_gap_mib": 9.555730422131091
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 24,
+      "regime": "R1",
+      "signed_gap_mib": 9.698842912701366
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": -6.751624169295837
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 6.244187149207619
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 10.980232253236181
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 14.147974338607582
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 14.919655562517619
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": 15.991669521153426
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 29.109675235429904
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 33.99320348622905
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 35.72897464473476
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 35.9155397711952
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": -2.2253016853649115
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 8.756175026132723
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 13.501823560940466
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 17.306872113014606
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 18.45918862452845
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": 4.8033116608576165
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 16.4308660818499
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 20.862031072113723
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 23.580624928132693
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 24.385228163385136
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": -2.3367586114120513
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 8.3137455343267
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 12.643716578293834
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 15.300939311302955
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 16.008792690888413
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": 16.87624111163518
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 28.470181708674772
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 33.09933711178496
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 34.96788593719293
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 34.91830652462045
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": -9.593268185085208
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 2.3466772488836796
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 7.004214779962467
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 9.373869900338832
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 9.923259395386822
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 2,
+      "regime": "R2",
+      "signed_gap_mib": 3.7522495438950045
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 5,
+      "regime": "R2",
+      "signed_gap_mib": 13.43922389410318
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 10,
+      "regime": "R2",
+      "signed_gap_mib": 17.379607180881294
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 20,
+      "regime": "R2",
+      "signed_gap_mib": 20.28744084819982
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 24,
+      "regime": "R2",
+      "signed_gap_mib": 21.029428655939
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 38.04631654951049
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 36.53340046217863
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 36.02966259988034
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 29.189840798286696
+    },
+    {
+      "block": 0,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 27.674906128158455
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 10.049538319636667
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 8.496953863651925
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 11.500769080244481
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 22.681799130103173
+    },
+    {
+      "block": 1,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 26.023750425265007
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 26.64723023161264
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 24.119083597252256
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 25.468179621303534
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 24.06187421527693
+    },
+    {
+      "block": 2,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 23.648066674805477
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 17.721684470145647
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 19.12854822918871
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 19.061391011336127
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 24.262707482732594
+    },
+    {
+      "block": 3,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 26.311698047182745
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 25.128647800425824
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 24.669506403038213
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 24.56498021264383
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 26.6632615536671
+    },
+    {
+      "block": 4,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 27.4452817561978
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 13.689727101336985
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 15.071335081953066
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 13.865004129136423
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 17.055251912856875
+    },
+    {
+      "block": 5,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 18.436555430245562
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 49.804492813348816
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 49.8596770118254
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 49.84344224066376
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 45.18934354596763
+    },
+    {
+      "block": 6,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 42.94845465325193
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 2,
+      "regime": "R3",
+      "signed_gap_mib": 12.123577403121999
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 5,
+      "regime": "R3",
+      "signed_gap_mib": 12.307181068412774
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 10,
+      "regime": "R3",
+      "signed_gap_mib": 11.706533996737562
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 20,
+      "regime": "R3",
+      "signed_gap_mib": 10.73406087904118
+    },
+    {
+      "block": 7,
+      "horizon_seconds": 24,
+      "regime": "R3",
+      "signed_gap_mib": 10.734848637899177
+    }
+  ],
+  "paired_20s_minus_2s": {
+    "R1": {
+      "ci95": [
+        -0.311383456948505,
+        7.2341502817401135
+      ],
+      "mean": 2.550249809835293,
+      "n": 8
+    },
+    "R2": {
+      "ci95": [
+        17.87582222123271,
+        19.65088911907017
+      ],
+      "mean": 18.77225785439262,
+      "n": 8
+    },
+    "R3": {
+      "ci95": [
+        -3.252248001608166,
+        5.345270566313729
+      ],
+      "mean": 0.8283656035991385,
+      "n": 8
+    }
+  },
+  "regimes": {
+    "R1": {
+      "10": {
+        "ci95": [
+          16.44139113870301,
+          41.373423224597246
+        ],
+        "mean": 28.147866627898907,
+        "n": 8
+      },
+      "2": {
+        "ci95": [
+          15.984703104574749,
+          37.31702585100484
+        ],
+        "mean": 26.414172007346792,
+        "n": 8
+      },
+      "20": {
+        "ci95": [
+          16.755381577456347,
+          43.33890548060259
+        ],
+        "mean": 28.964421817182085,
+        "n": 8
+      },
+      "24": {
+        "ci95": [
+          16.90278811469932,
+          43.24321720895858
+        ],
+        "mean": 28.997574653645955,
+        "n": 8
+      },
+      "5": {
+        "ci95": [
+          16.20166416164119,
+          38.50871095387939
+        ],
+        "mean": 27.023405479025712,
+        "n": 8
+      }
+    },
+    "R2": {
+      "10": {
+        "ci95": [
+          12.607067588923911,
+          25.417988697830282
+        ],
+        "mean": 18.683020752930247,
+        "n": 8
+      },
+      "2": {
+        "ci95": [
+          -3.427165682046649,
+          8.929632456693327
+        ],
+        "mean": 2.5645648982979026,
+        "n": 8
+      },
+      "20": {
+        "ci95": [
+          15.503231262925652,
+          27.701406975904064
+        ],
+        "mean": 21.336822752690523,
+        "n": 8
+      },
+      "24": {
+        "ci95": [
+          16.24907629972597,
+          28.124744988323386
+        ],
+        "mean": 21.944924923557636,
+        "n": 8
+      },
+      "5": {
+        "ci95": [
+          8.103348052910064,
+          20.771661203866216
+        ],
+        "mean": 14.13884148482606,
+        "n": 8
+      }
+    },
+    "R3": {
+      "10": {
+        "ci95": [
+          16.197490755609635,
+          33.250209793390496
+        ],
+        "mean": 24.004995361493258,
+        "n": 8
+      },
+      "2": {
+        "ci95": [
+          15.935744222751282,
+          33.47680676133834
+        ],
+        "mean": 24.151401836142384,
+        "n": 8
+      },
+      "20": {
+        "ci95": [
+          19.006880439346247,
+          31.925863610307687
+        ],
+        "mean": 24.979767439741522,
+        "n": 8
+      },
+      "24": {
+        "ci95": [
+          19.72609875985367,
+          31.551620009817213
+        ],
+        "mean": 25.40294521912577,
+        "n": 8
+      },
+      "5": {
+        "ci95": [
+          15.70377077750166,
+          33.167833641828395
+        ],
+        "mean": 23.77321071468762,
+        "n": 8
+      }
+    }
+  }
+}

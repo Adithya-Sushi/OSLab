@@ -1,0 +1,59 @@
+Related-work evidence for the initial draft
+===========================================
+Verified 21 October 2026, Asia/Kolkata.
+
+Linux interface contracts
+--------------------------
+https://docs.kernel.org/admin-guide/cgroup-v2.html
+https://www.kernel.org/doc/html/v6.12/admin-guide/blockdev/zram.html
+https://docs.kernel.org/accounting/psi.html
+https://www.kernel.org/doc/html/v6.12/mm/damon/design.html
+
+The running guest kernel and its interfaces determine supported controls. Current
+online documentation alone is not proof that an optional feature exists on it.
+
+Closest actuator characterization
+----------------------------------
+Abhiyan Dhakal and Sanjog Sigdel, A Bounded Reclaim Actuator for PSI-Guided
+Compressed Memory: A Controlled Ablation, arXiv:2608.13689v1 (13 August 2026).
+https://arxiv.org/html/2608.13689v1
+
+Its one-time request, compressed-swap setting and compute/SQLite canaries overlap
+the measurement ingredients. The candidate donor estimator must establish its
+own distinction and operational value. No novelty follows from a Linux VM,
+bounded request size, checksum, or compression-dependent outcome alone.
+
+Repeated sensitivity control and access-aware actions
+------------------------------------------------------
+Weiner et al., TMO: Transparent Memory Offloading in Datacenters, ASPLOS 2022,
+pp. 609-621, DOI 10.1145/3503222.3507731.
+https://pdl.cmu.edu/ftp/NVM/tmo_asplos22.pdf
+DOI registration metadata is preserved in tmo-crossref.json.
+
+DAMOS supports more than the convenience DAMON_RECLAIM interface. Its external
+feedback, quotas and filtering motivate a stronger comparator than stock defaults.
+
+Mobile reclaim and compressed swap
+------------------------------------
+Liang et al., Acclaim, USENIX ATC 2020, pp. 897-910:
+https://www.usenix.org/conference/atc20/presentation/liang-yu
+
+Liang et al., Ariadne, 2025:
+https://arxiv.org/abs/2502.12826
+
+Wei, Tsou, Chen and Chang, appSwap, ACM TECS 24(5s), pp. 1-24, 2025,
+DOI 10.1145/3760385. Metadata is preserved in appswap-crossref.json. The existing
+workspace audit reports a prior full-HTML review; current direct publisher fetch
+returned HTTP 403. Broad mechanism statements are supported by that audit and
+DOI metadata; this session makes no new full-text absence claim.
+
+Deng et al., Zram Instance Pool Framework for Adaptive Memory Compression in
+Resource-Sensitive Embedded Operating Systems, IEEE TCAD 44(8), pp. 2925-2938,
+2025, DOI 10.1109/TCAD.2025.3533300. Metadata is in zrampool-crossref.json.
+The original workspace audit inspected the public artifact at
+https://github.com/esnl-hnu/zrampool
+commit cda6562a11b7ca4ca82098a3505f8f11d707baf9. That public artifact predates the
+final journal paper. The final full-text overlap check remains unresolved.
+
+The initial draft claims neither firstness nor superiority over these systems.
+Strong baseline execution and exact contribution claims follow the pilot gates.

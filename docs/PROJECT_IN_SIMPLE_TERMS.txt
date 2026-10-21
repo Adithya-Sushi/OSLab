@@ -1,0 +1,62 @@
+Your project and research idea, in simple terms
+===============================================
+Adithya Sushil | 24BCI0286
+
+The problem
+------------
+Linux can take less-used memory pages from an application and store them in
+compressed RAM using zram. This can make more memory available for other work.
+However, not every application is an equally good source of pages. Some data
+compresses poorly. Some applications soon need their pages again, undoing the
+initial saving and adding work.
+
+Your proposed idea
+--------------------
+Learn which background application is likely to give a useful, lasting memory
+saving. Make small, measured reclaim requests; observe the result over time;
+then use that evidence to choose the next application under a shared work limit.
+The intended goal is to recover memory while preserving foreground response time
+and useful background progress.
+
+Think of it as deciding which cupboard to compress when making space in a room.
+The best cupboard is one whose contents shrink well and will stay packed for a
+while. The hard part is measuring how much space your own action actually saved
+while other people are moving things around in the same room.
+
+What we built and tested
+--------------------------
+The implementation runs real C workloads inside a dedicated Linux VM, places
+them in separate cgroups, sends bounded memory.reclaim requests, checks their
+results, and records memory, timing, pressure and work-progress counters.
+
+The study compares reclaiming from application A, reclaiming from B, and doing
+nothing. Each independent run starts with a fresh guest boot. It varies data
+compressibility, later page reuse, and unrelated memory allocation. There are
+72 usable discovery trials, 72 usable held-out validation trials, and 16 separate
+collector overhead trials. Two timing-invalid validation attempts remain saved
+alongside their exact-source replacement attempts.
+
+What the initial results mean
+-------------------------------
+Choosing the source application changed average available guest memory over the
+next 20 seconds by approximately 29, 21 and 25 MiB in the three discovery cases,
+for the same 32-MiB requested reclaim dose. These are measured donor contrasts,
+not a promise that every 32-MiB request frees that much physical memory.
+
+The first estimator ranked the donors correctly in the eight held-out pairs
+per case, but its uncertainty estimates were unreliable. Under unrelated memory
+activity, its average absolute benefit error was about 117 MiB. It therefore
+failed the plan's estimator gate. Observing a probe after it happens also does
+not establish that the system can predict the next probe before taking action.
+
+The paper's current contribution
+---------------------------------
+The draft reports a working measurement system, evidence that source selection
+matters in these controlled cases, and a clear failure of a simple attribution
+method under interference. It does not claim a validated controller or an
+improvement over existing systems. Strong-baseline comparisons, full application
+tests and confirmation experiments remain conditional on a useful estimator.
+
+The next step is to redesign how benefit is separated from unrelated memory
+changes, or make the estimator reliably say "unknown", then validate it on fresh
+experiments before using it to control donor selection.

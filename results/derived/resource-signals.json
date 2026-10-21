@@ -1,0 +1,798 @@
+{
+  "cpu_method": "Sum first eight /proc/stat CPU fields; idle includes iowait. Guest/guest_nice are not double-counted.",
+  "method": "Cumulative counter changes over actual elapsed time; boundary interpolation, missing/reset counters remain missing.",
+  "runs": [
+    {
+      "arm": "A",
+      "attempt": "20261020T201537Z-fa726e5c",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.20038309711874802,
+      "memory_psi_fraction": {
+        "full": 5.499999999999999e-07,
+        "some": 5.499999999999999e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T201638Z-a66c87cd",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.14839909482312919,
+      "memory_psi_fraction": {
+        "full": 7.5e-07,
+        "some": 7.5e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T201739Z-1af6f4a2",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.20437431645948034,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T201841Z-f80bed87",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.16264410597470458,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T201942Z-687decd4",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.17019493028927823,
+      "memory_psi_fraction": {
+        "full": 5.5e-07,
+        "some": 5.5e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T202043Z-7e6b25c7",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.19192481008818696,
+      "memory_psi_fraction": {
+        "full": 1.2e-06,
+        "some": 1.2e-06
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T202145Z-d1ec3524",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.1984966746488106,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T202248Z-f75d4bff",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.16202734405609343,
+      "memory_psi_fraction": {
+        "full": 8e-07,
+        "some": 8e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T202349Z-f6823611",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.15663119298950312,
+      "memory_psi_fraction": {
+        "full": 6.225038544484101e-07,
+        "some": 6.225038544484101e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T202451Z-352250c0",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.1963031999840651,
+      "memory_psi_fraction": {
+        "full": 5.5e-07,
+        "some": 5.5e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T202553Z-70c73ea2",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.15023724051983023,
+      "memory_psi_fraction": {
+        "full": 1.1e-06,
+        "some": 1.1e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T202655Z-4399610d",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.14570926144705787,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T202756Z-c02a1937",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.22471597329084525,
+      "memory_psi_fraction": {
+        "full": 0.000514,
+        "some": 0.00051465
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T202858Z-48dc17d5",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.259549371319037,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T202959Z-c848faa8",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.20121502393347857,
+      "memory_psi_fraction": {
+        "full": 3.466614150479902e-07,
+        "some": 3.466614150479902e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T203103Z-18ebdbbb",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.18378616523311075,
+      "memory_psi_fraction": {
+        "full": 0.0004092730505888464,
+        "some": 0.0004100730505888464
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T203205Z-5010f35d",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.20616532843112179,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T203306Z-1bf28e83",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.2731207128603983,
+      "memory_psi_fraction": {
+        "full": 5.889830605187411e-07,
+        "some": 6.022195424729068e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T203407Z-b47a9d2e",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.20385155696599377,
+      "memory_psi_fraction": {
+        "full": 4e-07,
+        "some": 4e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T203509Z-d979a009",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.15491156882659396,
+      "memory_psi_fraction": {
+        "full": 4.1294588247918125e-07,
+        "some": 4.1294588247918125e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T203610Z-c7c57c6d",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.20024279187215732,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T203711Z-91ae36fb",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.19038616636790162,
+      "memory_psi_fraction": {
+        "full": 5e-07,
+        "some": 5e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T203812Z-4fe7ee15",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.15859781627199276,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T203914Z-485d78bf",
+      "block": 1,
+      "guest_cpu_busy_fraction": 0.15963404422144412,
+      "memory_psi_fraction": {
+        "full": 2.3658168607732158e-06,
+        "some": 2.495659539170038e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T204017Z-cd1255c8",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.16953805020752488,
+      "memory_psi_fraction": {
+        "full": 5.5e-07,
+        "some": 5.5e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T204118Z-a25b2ef7",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.2764877112417785,
+      "memory_psi_fraction": {
+        "full": 0.00048339999999999993,
+        "some": 0.0004839499999999999
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T204219Z-327c535e",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.23094426707263427,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T204320Z-124d3eee",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.1725150616421519,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T204422Z-99362043",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.15498351753358608,
+      "memory_psi_fraction": {
+        "full": 1.6788043139943028e-06,
+        "some": 1.9419273174075477e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T204525Z-fd056fea",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.165885078962829,
+      "memory_psi_fraction": {
+        "full": 8.000000000000002e-07,
+        "some": 8.000000000000002e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T204626Z-a49752cb",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.1746845253162791,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T204728Z-31c2d4ef",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.19921625759131578,
+      "memory_psi_fraction": {
+        "full": 5.999999999999999e-07,
+        "some": 5.999999999999999e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T204830Z-939eabc7",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.2854357318587314,
+      "memory_psi_fraction": {
+        "full": 0.0004359939648201593,
+        "some": 0.0004365327577841912
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T204932Z-99ece57a",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.2022209539915355,
+      "memory_psi_fraction": {
+        "full": 6.236422228471318e-07,
+        "some": 6.236422228471318e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T205032Z-356ac49a",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.2116315908895786,
+      "memory_psi_fraction": {
+        "full": 0.0004262,
+        "some": 0.00045415
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T205133Z-c60dd26d",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.16990733821274362,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T205235Z-eed54611",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.22133027275602468,
+      "memory_psi_fraction": {
+        "full": 1.7100841602852441e-06,
+        "some": 1.8587871307448306e-06
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T205337Z-eaa50c7e",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.2851497205742971,
+      "memory_psi_fraction": {
+        "full": 0.00042785,
+        "some": 0.00042785
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T205438Z-51794a59",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.2797612112687353,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T205540Z-030b0b49",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.193248626837196,
+      "memory_psi_fraction": {
+        "full": 6.416499575137595e-07,
+        "some": 6.416499575137595e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T205642Z-f161cd2b",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.1407139124805813,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T205744Z-b2953d66",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.12864946530996568,
+      "memory_psi_fraction": {
+        "full": 6.5e-07,
+        "some": 6.5e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T205846Z-a2b47cdb",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.16531632274559993,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T205947Z-4f529f6f",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.1808462585567262,
+      "memory_psi_fraction": {
+        "full": 1.0584711326539584e-06,
+        "some": 9.169701385555515e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T210050Z-4f7ffa87",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.19767481478524374,
+      "memory_psi_fraction": {
+        "full": 1.1914744206169709e-07,
+        "some": 1.1914744206169709e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T210151Z-2f25ad1e",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.2018325108607234,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T210253Z-844ecff3",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.19169818430038899,
+      "memory_psi_fraction": {
+        "full": 3.6957985588057673e-07,
+        "some": 3.6957985588057673e-07
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T210356Z-a1293efb",
+      "block": 0,
+      "guest_cpu_busy_fraction": 0.13152907749166876,
+      "memory_psi_fraction": {
+        "full": 1.4560221535232122e-06,
+        "some": 2.2207098376349776e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T210457Z-1d1a5486",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.16191774048606478,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T210558Z-43e13a78",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.15005374483760547,
+      "memory_psi_fraction": {
+        "full": 5.494365974587689e-07,
+        "some": 5.494365974587689e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T210659Z-de1b3ec9",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.13968893462729837,
+      "memory_psi_fraction": {
+        "full": 2.0939270031707453e-07,
+        "some": 2.0939270031707453e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T210802Z-50e40e85",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.196029660008199,
+      "memory_psi_fraction": {
+        "full": 4e-07,
+        "some": 4e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T210904Z-403605f6",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.17998626943698837,
+      "memory_psi_fraction": {
+        "full": 0.0005443031522563223,
+        "some": 0.0006090891880813394
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T211005Z-4a20e73a",
+      "block": 5,
+      "guest_cpu_busy_fraction": 0.2413214331345228,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T211108Z-9b52531c",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.20318233709678313,
+      "memory_psi_fraction": {
+        "full": 6.785650439545348e-07,
+        "some": 6.785650439545348e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T211209Z-e09f1442",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.2132873813891022,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T211311Z-88abce1a",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.16227696714335582,
+      "memory_psi_fraction": {
+        "full": 3.718756738889257e-07,
+        "some": 3.718756738889257e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T211413Z-198107f8",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.17128209410523088,
+      "memory_psi_fraction": {
+        "full": 1.1e-06,
+        "some": 1.1e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T211515Z-c81bed97",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.15066942004582906,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T211616Z-491bb762",
+      "block": 3,
+      "guest_cpu_busy_fraction": 0.12588488814764387,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T211718Z-75930336",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.23115629752493017,
+      "memory_psi_fraction": {
+        "full": 0.0004146,
+        "some": 0.00041545
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T211819Z-7c3b385a",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.2247289409335751,
+      "memory_psi_fraction": {
+        "full": 4.827119717634947e-07,
+        "some": 5.808350677105565e-07
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T211920Z-f2f6cc5a",
+      "block": 4,
+      "guest_cpu_busy_fraction": 0.2509701483829556,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R2"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T212023Z-52a80e25",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.19442683544613137,
+      "memory_psi_fraction": {
+        "full": 6e-07,
+        "some": 6e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T212124Z-4f61604d",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.19956661705800105,
+      "memory_psi_fraction": {
+        "full": 2.5672269617503626e-07,
+        "some": 2.5672269617503626e-07
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T212226Z-3c4804dc",
+      "block": 7,
+      "guest_cpu_busy_fraction": 0.2263916256970867,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T212328Z-c0e9d73f",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.2132799428533817,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T212429Z-4e37b5c0",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.1492790625980016,
+      "memory_psi_fraction": {
+        "full": 1.15e-06,
+        "some": 1.15e-06
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T212531Z-35cdb6aa",
+      "block": 6,
+      "guest_cpu_busy_fraction": 0.19994854509729088,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R1"
+    },
+    {
+      "arm": "A",
+      "attempt": "20261020T212633Z-54e952a5",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.16266299929079397,
+      "memory_psi_fraction": {
+        "full": 3.6635592449806874e-08,
+        "some": 3.6635592449806874e-08
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "none",
+      "attempt": "20261020T212734Z-1261b461",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.17384458392957958,
+      "memory_psi_fraction": {
+        "full": 0.0,
+        "some": 0.0
+      },
+      "regime": "R3"
+    },
+    {
+      "arm": "B",
+      "attempt": "20261020T212837Z-a9f907f1",
+      "block": 2,
+      "guest_cpu_busy_fraction": 0.17679969843582022,
+      "memory_psi_fraction": {
+        "full": 6.830825590544466e-07,
+        "some": 6.830825590544466e-07
+      },
+      "regime": "R3"
+    }
+  ]
+}

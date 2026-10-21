@@ -1,0 +1,9 @@
+{
+  "filename": "debian-13-generic-arm64.qcow2",
+  "sha512": "e578f7ddf4033ff24f27b3daf27225831ba2824b72165425eb4a0dbfe918fc1e7a6c9adb18b2440dfae41781303aa754f18886cd1574576cda567aa24bf9221d",
+  "matches_official_sha512": true,
+  "url": "https://cloud.debian.org/images/cloud/trixie/latest/debian-13-generic-arm64.qcow2",
+  "image_build": "2026-10-17",
+  "verification": "HTTPS checksum; detached signature not verified",
+  "pinned_url": "https://cloud.debian.org/images/cloud/trixie/20261017-2634/debian-13-generic-arm64-20261017-2634.qcow2"
+}

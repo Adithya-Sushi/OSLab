@@ -1,0 +1,11 @@
+test_adverse_outcome_is_retained (analysis.test_reference.ReferenceTests.test_adverse_outcome_is_retained) ... ok
+test_control_adjustment_and_source_contrast (analysis.test_reference.ReferenceTests.test_control_adjustment_and_source_contrast) ... ok
+test_duplicate_arms_and_shared_boot_rejected (analysis.test_reference.ReferenceTests.test_duplicate_arms_and_shared_boot_rejected) ... ok
+test_later_unseen_reuse_schedule_identifies_nonreusing_donor (analysis.test_reference.ReferenceTests.test_later_unseen_reuse_schedule_identifies_nonreusing_donor) ... ok
+test_technical_invalidity_keeps_visible_incomplete_block (analysis.test_reference.ReferenceTests.test_technical_invalidity_keeps_visible_incomplete_block) ... ok
+test_slow_reply_preserves_overdue_stop_and_observation (analysis.test_actuator.ActuatorProtocolTests.test_slow_reply_preserves_overdue_stop_and_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.961s
+
+OK

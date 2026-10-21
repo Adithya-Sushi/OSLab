@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "maximum_interference_known_coverage_when_abstaining": 0.2,
+    "maximum_mean_absolute_error_mib": 8,
+    "minimum_heuristic_envelope_coverage": 0.8,
+    "minimum_probe_coverage": 0.5,
+    "minimum_ranking_accuracy": 0.8
+  },
+  "estimator_file_sha256": "5f4b0fd8376f46a42b38dd37bfadd28268a6b86c979b565fe2c0d04cab6f7922",
+  "frozen_before_validation": true,
+  "interpretation": "Engineering advancement criteria for the baseline E1 candidate, using the 8-MiB project resolution; not universal research standards. Validation is post-probe attribution, and cannot establish advance future-action prediction or controller superiority.",
+  "phase": "held-out post-probe attribution",
+  "source_manifest": "9c97540f4796907fac1ba63434890fc63f04ccaa4fde0dcc9d83b07a38c6d7a5"
+}

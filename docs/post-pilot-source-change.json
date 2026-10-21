@@ -1,0 +1,27 @@
+{
+  "extended_agent_sha256": "d791eaeb06f8ab7be8c0ffcff740adb710914a1ffba551acc34c19961f855442",
+  "extended_runtime_source": "109ee710a805fcf06055009251596ad2ac97e2d7513351597f72c66d75551a02",
+  "original_agent_sha256": "507c33464a0481c3ac864cf114014a7ad8dfe060afbf92741ede18fbafbddece",
+  "overhead_driver_sha256": "ab3dbbc829f2db9f0f8bc9d5a37b04f8ed1eeca93ec7f53a422ec06335b62039",
+  "overhead_trial_sha256": "b465b0a227502b48312c3dab8cc67cbbfcb3be749629c6ff1a33ac4a05ec2c87",
+  "primary_phase_completed_before_change": {
+    "future_action_prediction_validated": false,
+    "gates": {
+      "A_passed": true,
+      "B_passed": false,
+      "B_reasons": [
+        "R1: fewer than eight complete held-out blocks",
+        "R2: uncertainty envelope does not cover reference effects reliably",
+        "R3: fewer than eight complete held-out blocks"
+      ],
+      "C_passed": false
+    },
+    "reasons": [
+      "R1: fewer than eight complete held-out blocks",
+      "R2: uncertainty envelope does not cover reference effects reliably",
+      "R3: fewer than eight complete held-out blocks"
+    ],
+    "state": "stopped_at_checkpoint_B"
+  },
+  "reason": "After the frozen donor/estimator phases: extend only guest dispatch for collector on/off trials and complete read-only package capture."
+}

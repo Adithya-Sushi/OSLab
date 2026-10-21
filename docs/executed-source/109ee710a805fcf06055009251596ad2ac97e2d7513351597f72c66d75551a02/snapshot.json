@@ -1,0 +1,36 @@
+{
+  "source_manifest": {
+    "files": {
+      "controller/__init__.py": "3b0237c80ec76ead52a6130826540266cf548e592fc68d9881355ea438d3e2ac",
+      "controller/budget.py": "69a0a331b0505ba645f18dcd33d663819c7dd3cf557ab1d70e7d16c71443f16b",
+      "controller/estimator.py": "5f4b0fd8376f46a42b38dd37bfadd28268a6b86c979b565fe2c0d04cab6f7922",
+      "controller/policies.py": "6aaf6cc9a3c93ae52c5c04e23103ffd09603d2a47cd156ca1e3fbf60e81436d9",
+      "harness/__init__.py": "0f535c57199a0945df4e7dfc8d5fe777decd53c0b013c4e60f46f3165ffc4632",
+      "harness/actuator.py": "b8a88f00238b9cc94dbbffc64b8b817168d8a9d56464da9f1bb85c7232599f7e",
+      "harness/calibrate.py": "db49e1412edfe7fcd6b49956a4599e1b62ca9d52302bb37acae1af26b0eb7ace",
+      "harness/check_environment.py": "028c6fd913341af18ebd77d4a3edc41cd9363f8562f2e7e3eb48eadc85377c3b",
+      "harness/collector.py": "e41ee2fb8a55f1527296438cbe29ba2c6fe435dea8189e08926db12881953f35",
+      "harness/common.py": "8f2be0d5c9a85b9fe6694b118f6b1416376cdf907bf3a98a1f98abb42194c579",
+      "harness/exec_in_group.py": "cee7133b63b2c73eef044c1ff1341e6a1c1ea64e35d3454e3a6ad30aea69536b",
+      "harness/launch.py": "b5f24a84bb6cad8b69e1810b90ef6199c7b0f43083a1fe7d55a14405c9460062",
+      "harness/load_generator.py": "e2420d7bd9d27fdd057ec9b8a17c5110f5774a704d483313b9101b6f507340a2",
+      "harness/parsers.py": "9db928164d0891c157ffb0a3530e37e32c70d70a36d7c77dd8a67db6b90096f6",
+      "harness/run_matrix.py": "5365421368b10cc475484e28b7003273d0c96d1643ce5299ea2b6cb80db00c2f",
+      "harness/run_trial.py": "222e690cf8b7cd40af5d9b8951275584095fe752f9503cfa3a7431f646409c86",
+      "scripts/guest_agent.py": "d791eaeb06f8ab7be8c0ffcff740adb710914a1ffba551acc34c19961f855442",
+      "scripts/provision_guest.sh": "775ee26005b19a5d49961bb5d756f530a2e01a6a697275477963c9eba84e5f0b",
+      "src/common.h": "d7e3437557d4f3f927a873fc7476acec4dba1d92e4059840750021b2de18bf6f",
+      "src/donor.c": "62bf8f030e76f1592a2b6e77b2c77d42e395eb9995e3ccdbe0222a7c106a1860",
+      "src/foreground.c": "b9e996eac3abf66d144818bdcf83587d9c902eb578d5f0721f5f2929ccfc87b6",
+      "src/reclaim_worker.c": "124cd33c7524e410da885e6d037e6d622ae7f17882ddb3b4a25fe3280f7faf70",
+      "tests/test_core.py": "45a9f97843805a11501ea1331b870b667bb8f313bbe22748eab5264047d307ca"
+    },
+    "sha256": "109ee710a805fcf06055009251596ad2ac97e2d7513351597f72c66d75551a02"
+  },
+  "supplemental_files": [
+    "Makefile",
+    "analysis/__init__.py",
+    "analysis/statistics.py",
+    "vm/runner.swift"
+  ]
+}

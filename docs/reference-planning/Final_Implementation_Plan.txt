@@ -1,0 +1,745 @@
+OSLab: Detailed Implementation Plan
+===================================
+Project: Benefit-Guided Memory Reclaim Across Background Programs
+Research title: Estimating Reclaim Benefit Across Cgroups Sharing Compressed Swap
+Prepared: 14 October 2026, Asia/Kolkata
+Document version: 1.0
+
+HOW TO USE THIS DOCUMENT
+-----------------------
+Follow the stages in order. Each stage specifies what to build, what it produces,
+and how to decide whether it is complete. First complete the measurement pilot.
+Continue to the full controller and paper experiments only when the pilot passes.
+This document is a separate implementation guide; it does not replace the
+prior-work evidence in OSLab_Novelty_Audit.txt or OSLab_ZramPool_Review.txt.
+
+Planning estimates assume one student working part-time with basic C and Python
+knowledge. Allow 2-3 weeks for a credible pilot and roughly 8-12 weeks for the
+complete research artifact, including baseline integration, evaluation and writing.
+If Linux systems programming is new, add time for the prerequisites. These are
+effort estimates, not promises of completion or paper acceptance.
+
+1. THE IDEA AND THE RESULT WE ARE TRYING TO ESTABLISH
+===================================================
+
+Linux can reclaim unused memory from a background program and store its pages
+in compressed RAM. Reclaiming from different programs can yield different
+lasting memory benefits and different performance costs.
+
+We will investigate whether a controller can learn which background program is
+the best donor, then spend a limited amount of reclaim work on that donor while
+keeping a foreground service responsive and background programs productive.
+
+The research candidate is a validated estimator of delayed marginal guest-memory
+benefit, combined with coordinated donor selection under one shared work budget.
+Marginal benefit means the extra headroom caused by a particular reclaim action
+compared with what would have happened without that action.
+
+Existing work already covers compression, proactive reclaim, feedback control,
+per-app differentiation, delayed reuse, quotas and foreground protection. Those
+features are implementation ingredients. They do not establish our novelty.
+
+Current decision: GO for the bounded pilot. Publication novelty remains
+provisional. The full ZramPool journal paper was unavailable; its public source
+review does not prove absence from the final journal version. Resolve that
+limitation before making final absence or superiority claims about ZramPool.
+
+The project succeeds as research only if:
+  1) Donor choice creates a useful, repeatable difference in delayed headroom.
+  2) An online estimator predicts that difference on previously unseen trials.
+  3) Coordinated selection improves the resource tradeoff over simpler policies
+     and strong existing systems with comparable information and resource caps.
+
+Initial scope: guest-side Linux resource management in a small ARM64 VM.
+Guest headroom is the outcome; host RAM returned to macOS is a separate question.
+Kernel reclaim and OOM handling continue to provide ordinary emergency behavior.
+
+2. EQUIPMENT, TOOLS AND PREREQUISITES
+====================================
+
+Hardware and VM
+---------------
+Available host: Apple Silicon Mac with 16 GiB RAM.
+Use UTM with native ARM64 virtualization. Record its exact version and backend.
+Use Debian 13 ARM64 as a fixed research environment and record the installer
+checksum, installed packages, running kernel and VM device configuration.
+Release information: https://www.debian.org/releases/trixie/
+
+Start with one headless VM: 3 GiB RAM, 2 vCPUs, 40-60 GiB virtual disk.
+The disk is provisioned capacity, not a prediction of actual host disk use.
+If compilation needs more resources, temporarily use 6 GiB/4 vCPUs, then restore
+the recorded test configuration. Run measurements in only one VM at a time.
+Use selected 2/4 GiB and 2/4 vCPU configurations later for robustness tests.
+
+Software inside the guest
+-------------------------
+Required initially:
+  - C compiler, Make, Git and Python 3.
+  - util-linux/zramctl, procps and sysstat for setup and inspection.
+  - NumPy, pandas, matplotlib and SciPy for analysis, installed in a Python venv.
+  - GDB and strace for diagnosing workload and actuator failures.
+  - pytest or equivalent for consequential parser/protocol/replay checks.
+
+Required after the pilot:
+  - SQLite library and development headers for the second foreground service.
+  - Version-pinned oomd/Senpai and DAMON userspace tooling for strong baselines.
+  - Guest kernel build tools only if baseline capabilities require another kernel.
+
+Optional: software perf events or ftrace for diagnosis. Hardware PMU access is
+not a prerequisite. Record unavailable counters explicitly.
+
+Learning prerequisites
+-----------------------
+Be comfortable with:
+  - C memory allocation, mmap, pointer arithmetic and basic process management.
+  - Checking syscall return values, error codes and clean termination.
+  - Python subprocesses, file parsing, configuration and data analysis.
+  - Linux processes, virtual memory, swap, cgroups and file permissions.
+  - Repeated experiments, randomization, confidence intervals and data leakage.
+
+Find a faculty supervisor or systems mentor to review the measurement protocol
+and novelty statement before the confirmatory experiments.
+
+3. COMPONENTS TO BUILD
+======================
+
+The system has eight small components:
+
+Component                 Responsibility                     First language
+------------------------- ---------------------------------- --------------
+Environment checker       Verify guest capabilities/settings Python
+Workload launcher         Put workers in experiment groups  Python
+Background donor          Controlled memory and useful work C
+Foreground service        Serve repeatable requests          C
+Scheduled load generator  Generate and time requests         Python
+Collector                 Record system/workload counters    Python
+Reclaim actuator          Issue one validated reclaim action C
+Runner/estimator/policies  Execute trials and choose donors   Python
+
+Keep the collector responsive while the actuator runs in a separate process.
+Build a headless command-line artifact first. A dashboard is a later artifact
+feature, after the experiments justify the controller.
+
+Suggested project folder, to create during implementation:
+
+  OSLab_Reclaim_Research/
+    README.txt
+    src/donor.c
+    src/foreground.c
+    src/reclaim_worker.c
+    src/sqlite_service.c          [later]
+    harness/check_environment.py
+    harness/launch.py
+    harness/load_generator.py
+    harness/collector.py
+    harness/run_trial.py
+    harness/run_matrix.py
+    controller/estimator.py
+    controller/budget.py
+    controller/policies.py
+    controller/main.py
+    baselines/senpai_adapter.py   [later]
+    baselines/damos_adapter.py    [later]
+    configs/environment.json
+    configs/workloads/
+    configs/pilot/
+    configs/confirmation/
+    scripts/provision_guest.sh
+    scripts/reset_trial.sh
+    analysis/reference_effects.py
+    analysis/estimator_quality.py
+    analysis/policy_tradeoffs.py
+    tests/
+    docs/protocol.txt
+    docs/related_work.txt
+    results/raw/
+    results/derived/
+    results/figures/
+
+This is a proposed structure. No implementation files are created by this plan.
+
+STAGE 1. PREPARE AND VERIFY THE ENVIRONMENT
+==========================================
+Estimated effort: 1-2 working days after the VM is available.
+
+1.1 Create the headless Debian guest and verify ARM64 operation.
+1.2 Install the development tools, initialize the project repository and build
+    a minimal C program. Use a Python virtual environment for analysis packages.
+1.3 Make check_environment.py produce environment.json with:
+      architecture, kernel, page size, guest RAM/vCPUs, package versions,
+      available cgroup interfaces, PSI availability, swap devices, compressor,
+      THP/LRU settings, background services and source revision.
+1.4 Verify usable cgroup v2 memory accounting and reclaim, PSI and zram support.
+    Missing required features must fail the check with a clear explanation.
+1.5 Configure one fixed zram device. Start with 1 GiB logical swap capacity and
+    one available compressor, initially lz4 if supported. Fix the choice for
+    all pilot policies. Logical capacity is not allocated physical RAM.
+1.6 Use zram as the only swap backend in the main pilot: zswap and writeback
+    should be inactive. Record swap and compression settings after every boot.
+1.7 Use a dedicated experiment subtree with separate foreground, donor-A,
+    donor-B and optional interference leaves. Launch a worker into its leaf
+    before its large allocation. Respect systemd-managed hierarchy/delegation.
+1.8 Set identical containment/protection settings across policy comparisons.
+    Keep the collector and actuator outside constrained donor leaves.
+1.9 Record host load/memory conditions and save a clean guest starting state.
+
+Interface references:
+  https://docs.kernel.org/admin-guide/cgroup-v2.html
+  https://docs.kernel.org/admin-guide/blockdev/zram.html
+Check supported keys and fields against the running guest kernel; the current
+online documentation can describe features absent from that kernel.
+
+Deliverables:
+  environment checker, provisioning notes/script, environment manifest,
+  clean starting-state procedure and a minimal successful reclaim observation.
+
+Completion check:
+  A small test worker is in the correct group, its counters change, compressed
+  swap is observable, and one small reclaim request produces recorded effects.
+  Containment and reset work without losing the observer or guest access.
+
+STAGE 2. BUILD THE WORKLOADS
+===========================
+Estimated effort: 2-3 working days.
+
+2.1 Background donor program
+----------------------------
+Implement donor.c with parameters for allocation size, seed, data pattern,
+hot-region size, access rate, run duration and a scripted phase schedule.
+
+Start with 512 MiB per donor and a 128-MiB foreground working set. Increase
+donor sizes in controlled increments, approximately toward 768 MiB each, only
+if needed to reach the chosen pressure regime while retaining guest headroom.
+Select final sizes during calibration and keep them fixed across policies.
+
+The donor must:
+  - Allocate private anonymous memory and touch all intended resident pages.
+  - Generate deterministic non-uniform compressible data or seeded random data.
+    Avoid using zero-filled pages as the only compressible workload.
+  - Keep a cold region untouched and perform bounded useful work in a hot region.
+  - Report ready status, completed work units, checksum and actual phase times.
+  - Support later access to previously cold regions to test delayed refaults.
+  - Terminate cleanly on a harness stop request or configured deadline.
+
+Separate changes in compressibility from changes in access behavior. Rewriting
+data to change compressibility also touches pages and changes their residency.
+Treat that as a combined stress case; first establish a clean reuse-based
+ranking reversal using an unchanged data allocation.
+
+Keep workload identities, data-pattern labels and future phases in the runner's
+evaluation metadata. The estimator/policy must not receive those labels.
+
+2.2 Foreground service
+----------------------
+Implement a bounded request service that touches a configurable memory working
+set and returns a checked result. Use a simple local socket protocol initially.
+Each request has an ID; each reply repeats the ID and a result/checksum.
+
+Keep request contents, service work and working set consistent across policies.
+Measure its unpressured capacity before introducing donor workloads.
+
+2.3 Scheduled load generator
+----------------------------
+Implement load_generator.py so requests arrive on a fixed schedule independent
+of earlier completions. Record scheduled arrival, actual send, completion,
+failure and response correctness using a monotonic clock.
+
+Compute latency from scheduled arrival to completion, including queueing and
+generator lateness. Bound outstanding work, but count missed/dropped arrivals
+rather than silently skipping them. An overloaded generator invalidates the
+intended offered-load experiment and must be reported.
+
+Start calibration near 40% of unpressured service capacity, then select and
+freeze a rate that supports sufficiently many samples per analysis window.
+If short windows cannot support useful p99 estimates, lengthen the windows.
+
+Deliverables:
+  configurable donor, request service, scheduled client and correctness logs.
+
+Completion check:
+  Repeated seeds reproduce the intended content/work, both donors progress,
+  replies validate, and latency includes waiting. Donor A/B labels are exchangeable.
+
+STAGE 3. BUILD THE COLLECTOR AND RECLAIM ACTUATOR
+===============================================
+Estimated effort: 2 working days.
+
+3.1 Collector
+--------------
+Poll initially every 250 ms. Timestamp each sample; a scan across several files
+is not an atomic snapshot. Preserve raw readings as well as parsed values.
+
+Capture:
+  - Guest headroom/free memory, swap availability and CPU utilization.
+  - Per-workload residency, swap usage, pressure, available scan/refault counters
+    and OOM/limit events.
+  - zram stored-data sizes, physical allocation and available I/O/error counters.
+  - Foreground offered/completed/missed requests and response latencies.
+  - Donor useful progress, correctness and collector/actuator CPU/memory cost.
+
+Parse keyed interfaces by field name and treat absent optional fields as missing,
+not zero. Keep leaf and parent accounting separate. Use the documented zram
+mem_used_total field for allocator footprint; compressed payload alone omits
+overhead. Keep the original mm_stat line and a kernel-specific field mapping.
+
+PSI interval signals should use total-counter changes and actual elapsed time.
+Reference: https://docs.kernel.org/accounting/psi.html
+
+3.2 Actuator
+-------------
+Implement reclaim_worker.c as a small worker that receives a registered donor
+ID and a bounded byte request. Open only registered experiment reclaim targets;
+avoid accepting arbitrary privileged paths or executing shell commands.
+
+Use a simple line-oriented protocol or a private local socket. Every reply must
+include request ID, start/end timestamps, wall time, process CPU time, requested
+bytes, return status and error code. Allow one request in flight globally.
+
+A successful write is not proof of a specific number of bytes freed. Record
+EAGAIN and partial effects rather than automatically repeating the request.
+A slow call must not block the collector. On timeout, mark it overdue and stop
+dispatching new work; do not assume killing the worker instantly cancels reclaim.
+
+For the pilot, use a fixed 32-MiB request. Probe optional anonymous-only reclaim
+controls on the actual kernel; otherwise keep the supported actuator form fixed
+and rely on private-anonymous donors to make the experiment interpretable.
+
+Deliverables:
+  raw collector logs, parsed time series, actuator protocol and event log.
+
+Completion check:
+  Invalid donor IDs/amounts are rejected. Slow/failed requests and disappearing
+  workers are recorded, observation continues, and no overlapping requests occur.
+  Measure observer-only overhead against an otherwise identical no-observer run.
+
+STAGE 4. BUILD THE EXPERIMENT RUNNER AND RESET PROCEDURE
+======================================================
+Estimated effort: 1-2 working days.
+
+4.1 run_trial.py takes one configuration and executes this lifecycle:
+  verify environment -> prepare groups -> start observer -> start workloads ->
+  await ready -> warm up -> measure/actions -> recovery -> stop -> validate ->
+  save manifest/status -> restore the recorded starting procedure.
+
+Start a trial's measurement clock only after all workers are ready. Record any
+late workload phase transitions relative to that clock. Use monotonic time for
+alignment and ordinary date/time only for human-readable provenance.
+
+4.2 Every attempt gets a unique directory containing:
+  manifest.json             Source revision, environment, settings and seed
+  config.json               Exact workload/action configuration
+  telemetry.csv             Parsed timestamped measurements
+  raw_counters.jsonl        Original counter readings
+  requests.csv              Per-request arrival/completion/status
+  workload_events.jsonl     Progress, readiness, phases and correctness
+  reclaim_events.jsonl      Actuator inputs/results/costs
+  decisions.jsonl           Policy inputs/estimates/decisions, when applicable
+  stdout.log / stderr.log   Process output and diagnostic failures
+  outcome.json              Complete, failed or excluded, with reason
+
+4.3 Build run_matrix.py to randomize trial order within seed/scenario blocks.
+Write the complete execution list before running it. Resume unfinished trials
+without overwriting previous attempts or replacing failures silently.
+
+4.4 Reset memory/swap/cache history between independent trials. Initially use a
+consistent guest reboot and provisioning sequence. Later a faster reset is
+acceptable only after it is shown to produce comparable starting states.
+Always recheck empty experiment groups, zram state, resident allocation and
+background activity before declaring a reset successful.
+
+Restoring a VM snapshot containing RNG state can repeat accidental randomness.
+Use explicitly assigned trial seeds and record them. Start the collector and
+measurement clock afresh after restoring; include restore effects in warm-up.
+
+Do not attempt to undo a live reclaim action by assuming the program or swap
+state returns immediately. Stop workloads and recover the guest before any
+swap reset that requires bringing pages back into resident memory.
+
+Deliverables:
+  single-trial runner, matrix runner, restart support, reset/check procedure.
+
+Completion check:
+  A small unattended batch completes, leaves no workers behind, retains every
+  attempted run, and rejects incomparable starting states using declared rules.
+
+STAGE 5. RUN THE FIXED-DOSE CHARACTERIZATION PILOT
+================================================
+Estimated effort: 1-2 days for calibration, execution and first analysis.
+
+5.1 Define the measurement target before examining the policy results.
+    Let H(t) be guest MemAvailable. The primary pilot outcome is mean headroom
+    over 20 seconds after the reclaim request begins. Also show the complete
+    timeline, end-of-window headroom and outcomes at shorter/longer horizons.
+    Starting the horizon at dispatch includes time spent executing reclaim.
+    Slow requests that outlast it are adverse outcomes, not deletions.
+
+5.2 Reference effects come from separate matched action/no-action trials:
+
+    reference_gain_i = (mean H_after_action_i - mean H_before_action_i)
+                     - (mean H_after_no_action - mean H_before_no_action)
+
+    Use aligned windows, the same seed/phase schedule and equivalent starts.
+    This reference is a noisy experimental contrast, not a simultaneously
+    observed counterfactual or exact accounting of donor-owned physical bytes.
+    Repeat across independent blocks and inspect uncertainty/carryover.
+
+    MemAvailable already reflects memory consumed by zram. Do not subtract
+    zram allocation from it a second time. Likewise, do not blindly add cgroup
+    resident and swap counters: swap-cache accounting can overlap. Use allocator
+    and residency trajectories as supporting diagnostics, not exact donor ownership.
+
+5.3 Start with three regimes:
+    R1: donors with similar footprint/cold fraction/access rate, but different
+        compressibility. Swap their A/B identities across blocks.
+    R2: donors with different delayed re-access schedules. Preserve data and
+        allocation size so later reuse can reverse the initial benefit ranking.
+    R3: a separately controlled interference workload changes shared-pool or
+        resident-memory activity during the observation horizon.
+
+5.4 For each regime, start with eight discovery seed blocks. Each contains
+    three fresh trials: no proactive reclaim, reclaim A once, reclaim B once.
+    This is 3 regimes x 8 blocks x 3 arms = 72 discovery trials.
+    Randomize arm order. Use a 20-s stable pre-action window and at least 20 s
+    after action, plus a recovery observation period. Extend if calibration
+    shows effects persist beyond that interval.
+
+5.5 Plot headroom, donor residency, zram footprint, latency/progress and actuator
+    cost on aligned timelines. Check that independent free-memory/footprint
+    trends support the headroom interpretation. A donor-residency decrease
+    alone does not establish a useful whole-guest gain.
+
+Checkpoint A: continue to estimator validation only if donor differences exceed
+no-action variability and delayed behavior is reproducible. The initial practical
+target is an 8-MiB mean-benefit gap for a 32-MiB probe, with uncertainty reported.
+This is a project gate, not a universal research standard. Failure calls for a
+documented review of the premise, measurement or actuator configuration.
+
+STAGE 6. IMPLEMENT AND VALIDATE THE BENEFIT ESTIMATOR
+===================================================
+Estimated effort: 2-3 working days, including new held-out trials.
+
+6.1 Make a transparent baseline estimator first:
+    Observe headroom before a serialized probe, estimate local no-action drift
+    from past quiet windows, then measure the delayed post-probe change.
+    Save estimated effect, uncertainty, probe cost, age and interference flags.
+    An observed previous probe effect is evidence for a future decision; it is
+    not advance knowledge of the effect of the next request.
+
+6.2 Compare three lightweight predictors:
+    E0: age/refault/progress signals without measured headroom benefit.
+    E1: the most recent delayed probe effect, adjusted for age and uncertainty.
+    E2: a small regularized linear predictor using historical probe effects,
+        prior costs, recent drift/refault/progress and observable pool activity.
+
+    These are starting candidates. Begin with E1; implement E2 only if the
+    discovery data show an interpretable reason E1 fails. More model complexity
+    is not evidence of systems novelty.
+
+6.3 Restrict online features to telemetry available before each decision.
+    Do not provide compression-pattern labels, future phase boundaries, matched
+    no-action outcomes, later cost measurements or held-out reference gains.
+    Scale/fit features using training data only. Save model/configuration IDs.
+
+6.4 Implement an explicit UNKNOWN/ABSTAIN result. Suggested triggers include
+    missing/stale telemetry, too little history, old probe evidence, conflicting
+    metrics or large unexplained interference. Set thresholds on discovery data.
+    A confidence score must be checked empirically; naming it confidence does
+    not make it statistically calibrated.
+
+6.5 Freeze the estimator and evaluate on at least eight new seed blocks per
+    regime, again using three fresh reference arms. This adds 72 validation
+    trials. Include unseen access patterns as well as new seeds when feasible.
+    Keep tuning and validation blocks separate and report every configuration
+    change; a test used to revise the model becomes development data.
+
+6.6 Produce:
+    prediction/reference plots; error in MiB; positive/negative-benefit errors;
+    donor-ranking accuracy; uncertainty coverage; abstention coverage; estimate
+    overhead; and error broken down by regime, not just an overall average.
+
+Checkpoint B: proceed to coordinated selection if materially different donors
+are ranked correctly in at least 80% of held-out decisions, with confidence
+intervals and useful coverage. High accuracy obtained by abstaining on almost
+everything is insufficient. The estimator must handle delayed reuse and either
+remain useful or abstain predictably under interference.
+
+STAGE 7. BUILD THE SHARED-BUDGET DONOR-SELECTION PILOT
+====================================================
+Estimated effort: 2-3 working days after Checkpoint B.
+
+7.1 budget.py maintains ONE ledger across all donors, including exploration.
+    Initially cap the entire measurement run at eight 32-MiB requests, or
+    256 MiB requested in total. Set one common accumulated actuator-wall-time
+    cap from discovery measurements before comparing policies. Log CPU time
+    separately. All policies get identical permitted caps and eligibility rules.
+
+    A synchronous call can exceed remaining time or reclaim more than requested.
+    Record overshoot; stop subsequent dispatches. These caps bound admission of
+    proactive work, not all kernel CPU usage or exact physical bytes reclaimed.
+    Keep request size fixed so batching cannot explain the selection result.
+
+7.2 Implement the policy interface:
+    input: timestamped allowed telemetry, donor histories, remaining budget and
+           foreground/progress eligibility state;
+    output: no action, probe donor, reclaim donor, or cooldown, with a reason;
+    update: receive completed actuator result and delayed evaluation separately.
+
+7.3 Use states OBSERVE, PROBE, WAIT_FOR_EFFECT, SELECT, COOLDOWN and STOP.
+    Avoid mixing two controller-issued effects during the initial 20-s horizon.
+    A 200-s measurement period accommodates eight spaced requests and a final
+    delayed observation. Initial probes consume the same ledger as later actions.
+
+7.4 Implement five pilot policies:
+    P0: no proactive action; ordinary kernel reclaim continues.
+    P1: round-robin, with the same eligibility checks and probe infrastructure.
+    P2: choose using observable coldness/refault behavior.
+    P3: choose using immediate headroom gain from prior probes.
+    P4: choose using conservative predicted delayed gain per estimated action cost.
+
+    Use a nonzero calibrated cost floor to avoid unstable ratios. Apply latency
+    and progress requirements as constraints. Do not bury violations in a score.
+    Add a same-estimator/round-robin variant for isolating ranking's contribution
+    if P1 differs in information collection from P4.
+
+7.5 Initially propose a foreground p99 ceiling of 10% above its calibrated
+    unpressured reference and a donor progress floor of 90% of matched no-action
+    progress. Check feasibility during discovery, then freeze common thresholds.
+    Convert training no-action progress rates into fixed absolute online floors.
+    Held-out matched no-action ratios are for evaluation, not policy inputs.
+    If uncontrolled pressure already violates a threshold, choose a less severe
+    pilot regime or report that regime infeasible for all policies.
+    Show continuous tradeoffs alongside threshold results.
+
+    Use enough requests for the latency window; include failed/missed requests
+    and violation duration. Stopping work is a response, not a hard guarantee
+    that previously reclaimed pages cannot cause later latency damage.
+
+7.6 Run eight new seed blocks in each of two difficult scenarios: an unseen
+    donor-ranking reversal and shared-pool interference. Five policies give
+    2 x 8 x 5 = 80 policy trials. Randomize order and reset between trials.
+    If variants are added, record the revised count and their tuning budget.
+
+Checkpoint C: delayed-benefit selection must improve sustained headroom without
+worse violations/progress under common caps. Compare actual work consumption
+and matched-cost results; equal permitted caps do not imply equal work performed.
+If coldness/refault ranking or the immediate-gain policy matches the result,
+the proposed estimator/controller contribution has not been established.
+
+PILOT DECISION MEETING
+----------------------
+At this point, produce a short report containing:
+  - Exact claim, implemented estimator and its information requirements.
+  - Checkpoints A-C, uncertainty, adverse cases and all attempted runs.
+  - Evidence about interference, delayed reuse and probe costs.
+  - Comparison with the simplest alternatives.
+  - GO for full research, a specific redesign, or stop the mechanism claim.
+
+Stopping after a negative pilot is a valid research outcome. Preserve the
+characterization/replication artifact and results. Do not compensate for an
+insufficient mechanism by adding a GUI, distro features or an unrelated module.
+
+STAGE 8. INTEGRATE STRONG BASELINES AND THE FULL CONTROLLER
+=========================================================
+Estimated effort: 1-2 weeks after the pilot decision.
+
+8.1 Implement reproducible adapters that start/stop a baseline, apply recorded
+    settings, collect decisions/costs where available and verify actual actions.
+8.2 Run actual version-pinned Senpai/oomd with supported proactive settings.
+    Verify it is active on the intended groups; a non-acting baseline is invalid.
+8.3 Run DAMOS with the same foreground latency/background throughput feedback,
+    supported action quotas and cgroup targeting/filtering. Default DAMON_RECLAIM
+    can be supplementary, but cannot replace this stronger feedback comparator.
+    Interface/design basis:
+    https://www.kernel.org/doc/html/v6.12/mm/damon/design.html
+8.4 Include a simple measured-gain gate added to an existing policy and the
+    same estimator with round-robin selection. Share comparable telemetry.
+8.5 If the guest lacks needed baseline features, prepare one otherwise stock
+    kernel supporting them and use it for all policies. Document unresolved
+    baseline limitations rather than quietly omitting a strong comparison.
+
+Kernel quota/time limits from different mechanisms are not automatically the
+same as actuator wall time. Audit their meanings, report requested and observed
+costs, and compare measured cost/headroom tradeoff curves. Do not claim exact
+cross-system work matching where instrumentation cannot support it.
+
+8.6 Keep the first full controller fixed-dose unless adaptive sizing is needed.
+    If added, use a small discrete dose set and validate predictions separately
+    for each dose. Do not extrapolate a model calibrated at 32 MiB to every size.
+8.7 Add stale-estimate expiration and budgeted re-probing of ignored donors.
+    Test phase changes without passing future events into the policy.
+8.8 Add a SQLite-backed lookup service with fixed data/query/journal/cache
+    configuration and checked results as a real application validation case.
+
+Ariadne, appSwap and ZramPool initially provide mechanism comparisons. A bare
+multi-device zram setup is not a faithful ZramPool baseline. Direct superiority
+claims require reproducing the relevant implementation and aligning objectives.
+
+Completion check:
+  Every comparator demonstrably acts, has recorded settings and comparable
+  measurement paths, and can be run from the same harness. Policies receive
+  equal tuning opportunities and preserve foreground/background correctness.
+
+STAGE 9. RUN CONFIRMATORY EXPERIMENTS
+====================================
+Estimated effort: 1-2 weeks for execution, diagnosis and frozen analysis.
+
+Freeze code, estimator, policies, thresholds, workload matrix, run count and
+analysis protocol before these experiments. Use fresh seeds/scenarios. A change
+after inspecting results requires a new declared confirmatory phase.
+
+Core experiment dimensions:
+  foreground: memory-touch service and SQLite service;
+  donors: compressibility contrast, delayed reuse/reversal, shared-pool interference;
+  CPU resources: 2 and 4 vCPUs;
+  guest RAM: initially 3 GiB, with selected 2/4 GiB robustness cases.
+
+Comparator set, to freeze after baseline integration:
+  ordinary kernel reclaim; fixed periodic reclaim; pressure-only adaptive reclaim;
+  actual Senpai; feedback-equipped DAMOS; a simple existing-policy gain gate;
+  same-estimator round-robin; age/refault ranking; proposed coordinated policy.
+
+For planning, 2 services x 3 donor regimes x 2 CPU settings x 9 policies x
+10 independent repetitions = 1,080 main trials. Ten is an initial budgeting
+number; determine the actual fixed count from pilot variance and the smallest
+useful effect. At four minutes per trial, 1,080 trials take 72 hours before
+resets, diagnostics and robustness studies. Run sequentially and budget days.
+
+Primary outcomes:
+  mean/integrated guest headroom; foreground p99 and violation rate/duration;
+  useful progress of each donor; actual reclaim cost and probe overhead.
+Secondary outcomes:
+  headroom recovery, compression footprint, refaults, swap activity, failures,
+  observer/controller overhead, overshoot and behavior after phase transitions.
+
+Required ablations:
+  remove delayed evaluation; remove benefit feedback; replace donor ranking with
+  round-robin; remove uncertainty/abstention; remove estimate expiration/re-probing.
+Keep the same actuator, telemetry, caps and tuning allowance where applicable.
+
+Robustness checks:
+  selected RAM/CPU variations, observer/probe cadence, a file-backed donor,
+  controlled host load, different arrival/access patterns and no-pressure overhead.
+  Keep the initial compressor fixed; later test another compressor only as a
+  declared sensitivity case, not as an unexplained policy advantage.
+
+Analysis rules:
+  - Treat independent runs/seed blocks as replicates, not individual requests.
+  - Show per-regime results, paired differences and confidence intervals.
+  - Bootstrap at the block/run level when using bootstrap intervals.
+  - Report tails, failures and infeasible settings; do not average them away.
+  - Keep predeclared technical-invalidity reasons separate from adverse outcomes.
+  - OOM, timeout or an SLO violation is normally an outcome, not an exclusion.
+  - Compare tradeoff curves and actual costs, not one favorable default setting.
+
+Publication checkpoint:
+  The claimed estimator has demonstrated held-out predictive value, its costs
+  and uncertainty are measured, and the coordinated policy improves a useful
+  resource tradeoff over strong tuned alternatives in a clearly scoped regime.
+
+STAGE 10. PACKAGE, REPRODUCE AND WRITE THE PAPER
+==============================================
+Estimated effort: 1-2 weeks, partly overlapping final analysis.
+
+10.1 Provide guest provisioning, build, experiment and analysis entry points.
+10.2 Pin source revisions/settings and preserve raw runs plus derived results.
+10.3 Rebuild a clean guest and reproduce representative positive, neutral and
+     adverse cases. Have another person follow the artifact instructions.
+10.4 If a second ARM/x86 host becomes available, repeat selected cases for
+     generality. Two VM copies on the same Mac are not independent hardware.
+10.5 Obtain the remaining related-work full text needed for accurate comparisons.
+     Update the novelty statement if it changes the overlap assessment.
+10.6 Add a small results viewer or exported UTM appliance only after the headless
+     artifact is reproducible. Keep course-only features in a separate track.
+
+Paper outline:
+  problem and measured failure mode; closest work and exact distinction;
+  estimator/uncertainty; coordinated allocation; implementation and information
+  requirements; experiment method/baselines; results/ablations; adverse cases,
+  limitations and artifact instructions.
+
+Support a scoped conclusion about the tested Linux compressed-swap workloads.
+Publication depends on verified differentiation and results. A systems workshop
+or short paper is an initial target to discuss with the supervisor after the
+pilot; a major systems conference needs stronger mechanism and wider evidence.
+
+4. IMPLEMENTATION CHECKS THAT MATTER
+===================================
+
+Workload checks:
+  requested allocation is touched; seeds produce intended data; checksums remain
+  correct; progress counts useful work; phase transitions and shutdown are logged.
+Measurement checks:
+  units/time alignment are consistent; counter resets/missing fields are handled;
+  request failures and client lateness remain visible; observer cost is measured.
+Actuator checks:
+  registered-target validation, invalid requests, EAGAIN/partial effects, slow
+  operations, disappearing groups and duplicate request IDs have defined behavior.
+Policy replay checks:
+  budgets include probes; only one action is in flight; stale/uncertain estimates
+  cause the declared response; no protected/ineligible donor is selected.
+Integration checks:
+  a complete pressure trial records outcomes, survives expected failures, cleans
+  up workers and returns the guest to a verifiable starting condition.
+
+Use synthetic log fixtures for parser and policy replay verification. Real
+measurement validity requires guest experiments and matched reference trials.
+
+5. COMMON RISKS AND THE PLANNED RESPONSE
+=======================================
+
+No measurable donor difference:
+  Audit actuator effects and calibration; if the premise still fails, stop.
+Only immediate gains, followed by refaults:
+  Analyze the full delayed trajectory and validate longer horizons.
+Shared-pool interference breaks estimates:
+  Quantify failure/abstention; narrow the scope or justify additional instrumentation.
+Synthetic results fail on SQLite or other held-out workloads:
+  Limit the claim; do not replace the workload simply to recover a favorable result.
+Simpler policies perform equally well:
+  Retain the characterization, but do not claim the added estimator is necessary.
+Baseline is difficult to run:
+  Resolve kernel/tooling requirements and verify activity before comparing results.
+Host load changes guest timings:
+  Log it, standardize conditions and separately test controlled interference.
+Timeline exceeds the course deadline:
+  Finish the pilot and reproducible measurement artifact first; defer the full
+  controller, GUI and appliance packaging. Research conclusions follow evidence.
+
+6. PRACTICAL WEEK-BY-WEEK ORDER
+===============================
+
+Week 1: environment, donor/foreground/client, collector and actuator.
+Week 2: runner/reset, reference experiments and first estimator.
+Week 3: held-out validation, fixed-dose donor selection and pilot decision.
+Weeks 4-5: strong baseline integration and coordinated controller, if justified.
+Weeks 6-8: frozen confirmatory runs, ablations and robustness analysis.
+Weeks 9-10: independent reproduction, paper draft and artifact preparation.
+Reserve Weeks 11-12 for baseline/kernel issues, new evidence or supervisor review.
+
+Track work by deliverables and checkpoints rather than completing every feature
+in a week regardless of evidence. Time spent learning/debugging is additional.
+
+7. FIRST IMPLEMENTATION SESSION
+===============================
+
+Do these tasks first:
+  1. Create/provision the ARM64 guest and record its configuration.
+  2. Create the project folder and initialize version control.
+  3. Implement the environment checker.
+  4. Configure fixed zram and verify the experiment group structure.
+  5. Implement the smallest donor that allocates, touches and checks its memory.
+  6. Perform one small observed reclaim and save every counter/result.
+
+The first session is complete when the measurement path is demonstrated on one
+worker. The first research milestone is complete only when Checkpoint A shows
+that choosing between donors makes a repeatable, lasting difference.
+
+RELATED LOCAL DOCUMENTS
+------------------------
+  OSLab_Project_Plan.txt       Earlier integrated research plan, version 2.2.
+  OSLab_Novelty_Audit.txt      Detailed overlap audit and narrowed hypothesis.
+  OSLab_ZramPool_Review.txt    Public-source evidence, limits and pilot decision.
+  research/zrampool_review/   Verified source snapshots and comparisons.
+
+This document plans implementation. It does not report executed experiments,
+measured improvements, confirmed novelty or a completed controller.

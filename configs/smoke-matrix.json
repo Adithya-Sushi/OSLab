@@ -1,0 +1,46 @@
+{
+  "kind": "calibration",
+  "runs": [
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "calibration",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    }
+  ]
+}

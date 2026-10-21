@@ -1,0 +1,290 @@
+OSLab: Deeper Systems Novelty Audit
+==================================
+Date: 14 October 2026
+Reviewed proposal: OSLab_Project_Plan.txt version 2.0
+Decision: do not treat the current broad controller description as novel.
+Proceed only with a narrowed mechanism and a small hypothesis-testing pilot.
+
+Follow-up decision: GO for the bounded fixed-dose donor-benefit pilot described
+in OSLab_ZramPool_Review.txt. The user requested relying on public evidence after
+reporting no working IEEE access. ZramPool full text remains unavailable, but its
+public code was pinned and diffed against Linux v5.18.14. That scoped inspection
+supports a donor-estimation versus compression-instance distinction. It does
+not verify absence from the final journal paper. The follow-up also reviews the
+complete appSwap 2025 HTML, which removes app-aware allocation as a novelty claim.
+This update supersedes the earlier full-text gate for starting the small pilot,
+but not the requirement to verify related-work claims before publishing them.
+
+1. Assessment
+-------------
+The broad idea has substantial overlap with existing systems. PSI feedback,
+adaptive request size, bounded work, foreground protection, delayed refault
+feedback, compression-benefit awareness, and phase adaptation are established.
+The earlier recommendation needs narrowing. No verified research contribution
+exists merely from combining these features in a Debian ARM64 VM.
+
+The strongest remaining candidate is an estimator and coordinated allocator
+that distinguish the delayed marginal benefit of different cgroups sharing one
+compressed-swap pool, under ONE explicitly limited global reclaim-work budget.
+The estimator must account for uncertainty and produce useful donor rankings
+under concurrent activity. The allocator must improve on existing mechanisms
+and simple extensions given the same information and performance constraints.
+
+This combination was not located in the mechanisms inspected below. That is a
+bounded literature finding, not proof of universal absence. Novelty confidence
+is provisional, and the existing before/after estimator is not yet an adequate
+method. The candidate is an incremental systems contribution with material
+publication risk. Do not present it as a new reclaim framework or a major OS
+conference contribution before results establish its value.
+
+2. Evidence and inspection depth
+-------------------------------
+Reviewed the TMO ASPLOS 2022 paper, relevant Senpai/oomd functions and supporting
+accounting, Linux v6.12 DAMON design/implementation as well as current docs,
+the full 2026 bounded-reclaim preprint, and mechanism/evaluation sections of
+Ariadne, Archer, Acclaim, STYX, AppFlow, and Flexible Swapping for the Cloud.
+Followed citations to Google software-defined far memory and ezswap.
+
+Connector-fetched source snapshots are in research/novelty_audit/sources/.
+source_manifest.json records source URLs, Git blob IDs, read date and key
+function lines. Blob IDs identify file content, not repository commit IDs.
+oomd files are default-branch snapshots; Linux files are from the v6.12 tag.
+Web-indexed raw source had different line formatting/counts, so line references
+below use the saved connector snapshots. Existing license notices are preserved.
+
+No pilot or controller was implemented during this audit. Search results and
+paper abstracts were not used as proof that an unmentioned mechanism is absent.
+
+3. Senpai/TMO: what is already covered
+-------------------------------------
+TMO section 3.3 already describes per-cgroup reclaim amounts controlled by PSI,
+with a six-second interval chosen to observe delayed refault effects. Section
+4 evaluates memory/performance tradeoffs; section 5.2 discusses compressibility
+in backend choice. These eliminate novelty claims for repeated probing, delayed
+harm checks, compressed-memory savings, or adaptation to performance sensitivity.
+Source: https://pdl.cmu.edu/ftp/NVM/tmo_asplos22.pdf
+
+Saved Senpai.cpp: run() line 85; tick() 451; tick_immediate_backoff() 552;
+validatePressure() 640; validateSwap() 660; calculateSwappinessFactor() 688.
+The implementation has separate cgroup states, countdowns, adaptive limits,
+pressure validation, explicit reclaim and swap-related controls. Its examined
+decision paths do not rank donors by intervention-estimated delayed net headroom
+under a shared work budget. This scoped code observation does not imply that
+every oomd plugin or production policy lacks such coordination.
+Source: https://github.com/facebookincubator/oomd/blob/main/src/oomd/plugins/Senpai.cpp
+
+CgroupContext.cpp getEffectiveSwapFree() line 304 and
+getEffectiveSwapUtilPct() line 342 concern logical swap usage and hierarchical
+limits. They are not a zram allocator-footprint marginal-gain calculation.
+The context also exposes zswap_usage(): do not claim oomd has no compressed-memory
+accounting. Distinguish available metrics from how a policy actually uses them.
+Source: https://github.com/facebookincubator/oomd/blob/main/src/oomd/CgroupContext.cpp
+
+One baseline caveat: the inspected validateSwap() comparison uses >= despite a
+comment describing usage below a threshold. Record the actual version/settings
+and verify that configured baselines perform reclaim. Do not silently fix it
+and call that implementation upstream, or compare against a non-acting baseline.
+
+4. DAMON/DAMOS: a larger overlap than the original plan acknowledged
+-------------------------------------------------------------------
+The distinction between DAMON_RECLAIM's convenience interface and the broader
+DAMOS framework matters. v6.12 already provides external quota goals, region
+prioritization, watermarks and cgroup filters. Its design explicitly names
+application latency/throughput as possible user_input feedback. Latest-only
+features are unnecessary to establish this overlap.
+Source: https://www.kernel.org/doc/html/v6.12/mm/damon/design.html
+
+In saved damon-core-v6.12.c, damos_quota_score() line 1524 uses the highest
+normalized goal score. damos_set_effective_quota() line 1542 tunes effective
+size and combines it with observed action throughput and time/size caps.
+Therefore multiple constraints and a work-aware quota are not new concepts.
+Source: https://github.com/torvalds/linux/blob/v6.12/mm/damon/core.c
+
+The inspected DAMOS paths do not themselves construct the proposed causal,
+delayed donor-benefit estimator. But they can receive an externally computed
+signal. An OSLab loop that just sends latency/headroom feedback to quotas could
+be a configuration/application of DAMOS, not a new controller.
+
+Required comparison: DAMOS with the SAME latency/throughput feedback supplied
+to OSLab, plus a simple gain-gated DAMOS configuration. A PSI-only/default
+DAMON baseline would not isolate the claimed advance fairly.
+
+5. Compressed-swap and reclaim papers
+-------------------------------------
+Bounded Reclaim Actuator, Dhakal and Sigdel, 2026 preprint:
+One 96 MiB request, static versus delayed zram, structured/random allocations,
+compute and SQLite canaries, tail latency and matched cases. It reports a
+workload-dependent outcome and explicitly leaves repeated adaptation untested.
+This overlaps the proposed pilot's setting, workloads and metrics. A dose sweep,
+repeatable ARM VM experiment, or adding a repeated loop is not sufficient novelty.
+Source: https://arxiv.org/html/2608.13689v1
+
+Ariadne, HPCA 2025:
+Hotness-aware placement, adaptive compression granularity and pre-decompression
+address relaunch latency and CPU overhead. It defeats generic claims that
+compression cost and later reuse were previously ignored. It changes page/
+compression mechanisms rather than the proposed global cgroup budget allocator.
+Source: https://arxiv.org/html/2502.12826v1
+
+Archer, FAST 2025:
+Uses page associations and adaptive compression regions for mobile response.
+It also makes memory/compression tradeoffs central. Changing compression
+granularity or treating correlated reuse as a new observation would overlap it.
+Source: https://www.usenix.org/system/files/fast25-li.pdf
+
+ezswap, IEEE Access 2019:
+Selective admission estimates compressibility, while replacement uses a
+cost-benefit model involving density, recency and eviction cost. Benefit-aware
+compression selection is already established at page/cache granularity. Moving
+the same intuition to cgroup granularity needs an independent mechanism and
+demonstrated advantage, not just a new name.
+Primary author-institution record:
+https://pure.skku.edu/en/publications/ezswap-enhanced-compressed-swap-scheme-for-mobile-devices/
+The assessment is supported by the author-institution abstract; indexed
+full-paper text was also examined, but direct publisher full text was not
+accessible in this session. No claim of feature absence rests on that abstract.
+
+Acclaim, USENIX ATC 2020:
+Foreground-aware eviction and prediction-based background reclaim already
+address foreground/background asymmetry and dynamic request size. Foreground
+protection and smaller adaptive reclaim batches are not sufficient differentiators.
+Source: https://www.usenix.org/system/files/atc20-liang-yu_0.pdf
+
+STYX, USENIX ATC 2023:
+Shows memory optimization can harm foreground tail latency through CPU/cache
+interference even with foreground pages protected, and offloads work to a
+SmartNIC. This rules out treating that spillover failure mode as a new discovery.
+The proposed project avoids its hardware dependency, which is a scope difference,
+not by itself novelty.
+Source: https://www.usenix.org/system/files/atc23-ji.pdf
+
+AppFlow, 2026 manuscript:
+Combines preloading, adaptive page-type-aware reclaim and context-aware process
+killing for app launch/multitasking. It further limits broad claims about
+system-wide foreground responsiveness and background survivability.
+Source: https://arxiv.org/html/2603.17259v1
+
+Google software-defined far memory, ASPLOS 2019:
+Already quantifies compression-dependent actual memory savings and compression/
+decompression costs. Compressed pages continuing to consume DRAM is established
+knowledge, not an OSLab research finding.
+Source: https://storage.googleapis.com/gweb-research2023-media/pubtools/5649.pdf
+
+Flexible Swapping for the Cloud, 2024 manuscript, and Tide, 2026 preprint:
+Provide configurable/phase-aware VM reclamation through different page/
+hypervisor mechanisms. Merely detecting phases or running in a VM is not a gap.
+Sources: https://arxiv.org/html/2409.13327v1
+         https://arxiv.org/html/2609.40082v1
+
+Recent upstream work:
+The September 2026 offload-only swap RFC discusses compressed-swap allocation
+risks during pressure and distinguishes proactive policy from backend eligibility.
+Avoid claiming that allocation risks of compressed swap are unrecognized.
+Source: https://lkml.iu.edu/2609.1/15385.html
+
+Unresolved publication (updated by OSLab_ZramPool_Review.txt):
+Zram Instance Pool Framework for Adaptive Memory Compression in
+Resource-Sensitive Embedded Operating Systems (TCAD 2025), DOI
+10.1109/TCAD.2025.3533300, is confirmed by its authors' lab publication record.
+Full text was not accessible; the discoverable abstract describes adaptive
+multi-instance compression. This remains an overlap check before claiming a
+first compressed-swap resource controller. Do not infer missing donor/benefit
+features from the abstract. No superiority claim over ZramPool is justified.
+Author record: https://github.com/hnu-esnl/en/blob/main/index.html
+The follow-up located https://github.com/esnl-hnu/zrampool and inspected commit
+cda6562a11b7ca4ca82098a3505f8f11d707baf9 (6 May 2023). The added paths select
+swap destinations using a global free-page proxy and change reclaim watermarks.
+No proposed per-cgroup intervention-benefit estimator appears in those additions.
+The public artifact predates the journal version; do not equate them.
+
+6. Exact residual contribution to investigate
+---------------------------------------------
+Provisional contribution statement:
+
+"We estimate the delayed marginal guest-memory benefit of reclaiming from each
+cgroup sharing a compressed-swap pool, quantify when that estimate is unreliable,
+and allocate a limited global reclaim-work budget using those estimates while
+monitoring foreground latency and background progress. We establish whether
+this improves the resource tradeoff beyond tuned existing policies and simple
+extensions receiving identical telemetry."
+
+Three parts must survive evaluation:
+  A. Estimation: a specified, calibrated method for marginal benefit under shared
+     pool activity, with measured errors and uncertainty. Merely reading mm_stat
+     or subtracting a before/after MemAvailable value is insufficient.
+  B. Allocation: coordinated donor choice under a shared budget, distinct from
+     independent per-cgroup tuning or cgroup filters. Generic greedy ranking is
+     not claimed as a newly invented algorithm.
+  C. Evidence: a reproducible regime where donors look similar to existing
+     pressure/age metrics but deliver different sustained benefit, plus held-out
+     evidence that selecting the better donor improves useful outcomes.
+
+Neither "net bytes" arithmetic, byte-seconds, randomization, nor generic
+cost-benefit scheduling is individually claimed as an invention. The possible
+systems contribution is their concrete estimator/allocator realization and
+validated operational advantage in a previously unestablished setting.
+
+Define the target before measuring:
+  G_i(q,T) = expected difference in mean guest headroom over horizon T between
+             requesting q from donor i and taking no proactive action.
+  C_i(q,T) = incremental measured reclaim-work cost, with delayed harmful effects
+             evaluated separately through service latency and donor progress.
+
+The no-action outcome is counterfactual, not simultaneously observable. Matched
+repeat trials/randomized action-versus-no-action trials can establish reference
+effects. The eventual online estimator only sees present/past telemetry. Measure
+its prediction error on held-out effects; do not feed it reference runs or phase
+labels. Randomization alone cannot remove carryover or time-varying confounding.
+
+Global MemAvailable is an estimated headroom signal, not exact physical donor
+ownership or host RAM returned. Shared allocator packing, concurrent allocations,
+kernel reclaim and swap-cache residence complicate attribution. Validate against
+independent footprint/free-page observations in controlled trials. If this
+cannot be done credibly using stock counters, narrow the claim to observed
+headroom or add instrumentation; do not call the estimate exact physical savings.
+
+7. What must change before the pilot
+------------------------------------
+Replace the broad controller-first objective with an observability and donor-
+ranking pilot. Use one foreground service and two background cgroups in the
+existing ARM64 guest; no new kernel scheduler, compressor or distribution work.
+
+Predeclare these tests:
+  1. Matched-pressure donors: comparable footprint, coldness and own pressure,
+     but different compressibility. Does marginal benefit rank differently?
+  2. Phase reversal: swap which donor has useful compressed/cold memory, without
+     revealing the change to the estimator. Can ranking adapt at bounded cost?
+  3. Shared-pool interference: unrelated allocations/reclaim changes global
+     counters. Can the estimator remain useful or abstain reliably?
+  4. Equal-budget choice: spend the same total reclaim-work budget on each donor,
+     round-robin, and benefit-ranked selection. Compare headroom, latency and
+     useful donor progress. Count probes and their harm in the budget.
+
+Before a full controller, specify the headroom definition, horizon, work budget,
+matching/reset strategy, prediction error criterion, and smallest useful effect.
+Validate clean initial states in separate trials; do not assume reclaim can be
+reversed to restore a live experiment instantly.
+
+Confirmatory comparator requirements if the pilot passes:
+  - Actual Senpai, verified active; include suitable supported modes/settings.
+  - DAMOS with direct application latency/throughput feedback, not only PSI.
+  - Simple net-gain gate added to an existing policy.
+  - The same estimator with round-robin rather than coordinated donor ranking.
+  - Tune all policies on equal pilot budgets and compare tradeoff curves.
+
+Decision rule:
+  Proceed to estimator/controller research only if the donor-ranking effect is
+  reproducible, the estimate works beyond clean synthetic cases, and a simple
+  existing-policy extension cannot achieve the same tradeoff. If the difference
+  disappears after tuning or attribution is unreliable, stop this mechanism claim.
+  A characterization/replication report may remain useful, but no novel systems
+  mechanism has then been established.
+
+8. Recommendation
+-----------------
+There is no confirmed novelty in version 2.0's broad feature combination. The
+surviving idea is a narrow, testable estimator-plus-global-allocation hypothesis.
+It is worth only a small characterization pilot at this stage. Full controller
+implementation and publication claims should wait for that gate and the remaining
+ZramPool full-text check. The proposed hardware is sufficient for this scoped
+pilot; additional hardware cannot fix an insufficiently differentiated mechanism.

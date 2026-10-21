@@ -1,0 +1,1427 @@
+{
+  "future_action_prediction_validated": false,
+  "kind": "post_probe_attribution_diagnostic",
+  "limitations": [
+    "Estimates use telemetry after the measured probe; this is attribution validation, not advance prediction.",
+    "Comparing A and B uses separate matched reference arms, not sequential probes in one controller run.",
+    "The E1 envelope is a heuristic; empirical coverage is reported without calling it a confidence interval."
+  ],
+  "probes": [
+    {
+      "attempt": "20261020T221705Z-961ac31f",
+      "block": 100,
+      "donor": "A",
+      "error_mib": -5.009878567402602,
+      "estimated_mib": 26.264107893567434,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 31.273986460970036,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T221806Z-8abf2268",
+      "block": 100,
+      "donor": "B",
+      "error_mib": -1.5908864522570703,
+      "estimated_mib": -21.831296287986294,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": -20.240409835729224,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215120Z-1fb40201",
+      "block": 101,
+      "donor": "A",
+      "error_mib": -3.6697024773798246,
+      "estimated_mib": -2.924307997978313,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 0.7453944794015115,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215323Z-5a5b9784",
+      "block": 101,
+      "donor": "B",
+      "error_mib": -5.067782388075454,
+      "estimated_mib": 19.139047202541736,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 24.20682959061719,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.5633261732621273
+    },
+    {
+      "attempt": "20261020T221501Z-c38d974c",
+      "block": 102,
+      "donor": "A",
+      "error_mib": -8.09459886720407,
+      "estimated_mib": 23.00920128726119,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 31.10380015446526,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 3.1534463949127636
+    },
+    {
+      "attempt": "20261020T221358Z-55e513a4",
+      "block": 102,
+      "donor": "B",
+      "error_mib": 2.6275595917708907,
+      "estimated_mib": 1.444182299690696,
+      "false_negative": false,
+      "false_positive": true,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -1.1833772920801948,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223029Z-792d9e54",
+      "block": 103,
+      "donor": "A",
+      "error_mib": -3.8655022006028306,
+      "estimated_mib": -4.297925942987857,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -0.43242374238502634,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222824Z-d89ad456",
+      "block": 103,
+      "donor": "B",
+      "error_mib": -1.7380909320571263,
+      "estimated_mib": 9.469822674445972,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 11.207913606503098,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215932Z-bb7cc088",
+      "block": 104,
+      "donor": "A",
+      "error_mib": -5.75553274619115,
+      "estimated_mib": 24.09231735292319,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 29.84785009911434,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215831Z-82d61b91",
+      "block": 104,
+      "donor": "B",
+      "error_mib": -6.8493435230876365,
+      "estimated_mib": -5.460829436128588,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 1.3885140869590487,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T221154Z-ae0c65e0",
+      "block": 105,
+      "donor": "A",
+      "error_mib": -3.712922870184196,
+      "estimated_mib": -0.3623294155631477,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 3.3505934546210483,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220951Z-ef8148f6",
+      "block": 105,
+      "donor": "B",
+      "error_mib": -6.011153815352554,
+      "estimated_mib": 23.400861835554725,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 29.41201565090728,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223742Z-606dba60",
+      "block": 106,
+      "donor": "A",
+      "error_mib": -2.244902320761746,
+      "estimated_mib": 26.980444742428183,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 29.22534706318993,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T230034Z-e7111ccd",
+      "block": 106,
+      "donor": "B",
+      "error_mib": 1.855139758240675,
+      "estimated_mib": 2.5558579839497995,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 0.7007182257091245,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T213859Z-ad33a304",
+      "block": 107,
+      "donor": "A",
+      "error_mib": 0.6505572301094462,
+      "estimated_mib": -1.4033960051319054,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": -2.0539532352413516,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T214000Z-00609e18",
+      "block": 107,
+      "donor": "B",
+      "error_mib": -3.5340083987198376,
+      "estimated_mib": 16.74136814399321,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 20.275376542713047,
+      "regime": "R1",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220747Z-380fc5fa",
+      "block": 100,
+      "donor": "A",
+      "error_mib": 1.3377871680855504,
+      "estimated_mib": 1.6598552309395371,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 0.3220680628539867,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220645Z-ca519f48",
+      "block": 100,
+      "donor": "B",
+      "error_mib": -7.767745663472283,
+      "estimated_mib": 9.218875625849591,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 16.986621289321874,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 3.363496200065655
+    },
+    {
+      "attempt": "20261020T214407Z-bdd41d04",
+      "block": 101,
+      "donor": "A",
+      "error_mib": 4.37152784749037,
+      "estimated_mib": 24.4214158269981,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 20.04988797950773,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T214204Z-b4a15c11",
+      "block": 101,
+      "donor": "B",
+      "error_mib": 3.0398176058517454,
+      "estimated_mib": 2.099422875793103,
+      "false_negative": false,
+      "false_positive": true,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -0.9403947300586424,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220442Z-8aeb646b",
+      "block": 102,
+      "donor": "A",
+      "error_mib": -4.13023880864865,
+      "estimated_mib": 4.723531713652725,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 8.853770522301375,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220340Z-df04ce31",
+      "block": 102,
+      "donor": "B",
+      "error_mib": -3.5111767382893078,
+      "estimated_mib": 28.281858356112295,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 31.793035094401603,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T220135Z-0df9a9b7",
+      "block": 103,
+      "donor": "A",
+      "error_mib": -3.488865468538169,
+      "estimated_mib": 25.413870648941266,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 28.902736117479435,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.9469560803078214
+    },
+    {
+      "attempt": "20261020T220238Z-b9e0facb",
+      "block": 103,
+      "donor": "B",
+      "error_mib": -1.8080260510004562,
+      "estimated_mib": -0.628628788493347,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 1.1793972625071092,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223129Z-5a974902",
+      "block": 104,
+      "donor": "A",
+      "error_mib": 1.8925069041466518,
+      "estimated_mib": -0.4159001876381776,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": -2.3084070917848294,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223233Z-a1044826",
+      "block": 104,
+      "donor": "B",
+      "error_mib": -0.5834603119200921,
+      "estimated_mib": 20.268192398661128,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 20.85165271058122,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222213Z-8fdd35aa",
+      "block": 105,
+      "donor": "A",
+      "error_mib": -5.848814429216986,
+      "estimated_mib": 27.60019190293781,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 33.449006332154795,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222316Z-4a3413d4",
+      "block": 105,
+      "donor": "B",
+      "error_mib": -5.722660816513724,
+      "estimated_mib": -9.936040128382217,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -4.2133793118684935,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0489140070852074
+    },
+    {
+      "attempt": "20261020T214508Z-6430e6fa",
+      "block": 106,
+      "donor": "A",
+      "error_mib": 1.2850376441602087,
+      "estimated_mib": 5.913988331805083,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 4.628950687644874,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T214711Z-865dda31",
+      "block": 106,
+      "donor": "B",
+      "error_mib": -4.710793919279322,
+      "estimated_mib": 18.43202685186853,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 23.142820771147854,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215424Z-1d8b3f49",
+      "block": 107,
+      "donor": "A",
+      "error_mib": -0.9423632844171905,
+      "estimated_mib": 24.528335942242272,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 25.470699226659463,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T215527Z-2a542ff6",
+      "block": 107,
+      "donor": "B",
+      "error_mib": 2.0149950697406256,
+      "estimated_mib": 4.421281592913037,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": true,
+      "reference_mib": 2.4062865231724118,
+      "regime": "R2",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.107468136301891
+    },
+    {
+      "attempt": "20261020T213655Z-2516197f",
+      "block": 100,
+      "donor": "A",
+      "error_mib": -57.86516527053049,
+      "estimated_mib": -30.825217142269132,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 27.039948128261358,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T213757Z-96cb4b63",
+      "block": 100,
+      "donor": "B",
+      "error_mib": -54.35130957640237,
+      "estimated_mib": -60.4489421763287,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -6.097632599926328,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T214915Z-86418b82",
+      "block": 101,
+      "donor": "A",
+      "error_mib": -79.6755668858146,
+      "estimated_mib": -80.4813697872781,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -0.805802901463494,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T214814Z-2f2a249f",
+      "block": 101,
+      "donor": "B",
+      "error_mib": -86.5180745660146,
+      "estimated_mib": -65.86940270747124,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 20.648671858543366,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T230136Z-e0236387",
+      "block": 102,
+      "donor": "A",
+      "error_mib": -145.70620198614517,
+      "estimated_mib": -116.59294418672825,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 29.113257799416942,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 3.038369602758696
+    },
+    {
+      "attempt": "20261020T224253Z-acd1533b",
+      "block": 102,
+      "donor": "B",
+      "error_mib": -142.98743754357534,
+      "estimated_mib": -150.882171324383,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -7.894733780807655,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T213348Z-64d54eba",
+      "block": 103,
+      "donor": "A",
+      "error_mib": -185.88850660637164,
+      "estimated_mib": -185.37358598540655,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 0.5149206209650856,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T213450Z-cc4ae3ea",
+      "block": 103,
+      "donor": "B",
+      "error_mib": -188.2784929432845,
+      "estimated_mib": -177.78577580975582,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 10.492717133528686,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222722Z-2d38d217",
+      "block": 104,
+      "donor": "A",
+      "error_mib": -52.929263391820186,
+      "estimated_mib": -28.685435139759065,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 24.24382825206112,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.164288748049081
+    },
+    {
+      "attempt": "20261020T222519Z-4b3aa798",
+      "block": 104,
+      "donor": "B",
+      "error_mib": -49.69542481406214,
+      "estimated_mib": -59.661385054146685,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -9.965960240084542,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T212942Z-0dda506f",
+      "block": 105,
+      "donor": "A",
+      "error_mib": -77.9374187031648,
+      "estimated_mib": -84.59204099976809,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -6.654622296603293,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T213043Z-97aa7045",
+      "block": 105,
+      "donor": "B",
+      "error_mib": -86.61304426193509,
+      "estimated_mib": -70.07841298667061,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 16.534631275264474,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222112Z-3405ae91",
+      "block": 106,
+      "donor": "A",
+      "error_mib": -135.99627977898865,
+      "estimated_mib": -108.78036115841714,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 27.21591862057153,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T222009Z-a78b3aec",
+      "block": 106,
+      "donor": "B",
+      "error_mib": -144.6038028355722,
+      "estimated_mib": -153.96494135048897,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": -9.361138514916775,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223435Z-0c0135c9",
+      "block": 107,
+      "donor": "A",
+      "error_mib": -186.83729014622094,
+      "estimated_mib": -185.91449723823342,
+      "false_negative": false,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 0.9227929079875139,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    },
+    {
+      "attempt": "20261020T223538Z-faa127b3",
+      "block": 107,
+      "donor": "B",
+      "error_mib": -188.71926174091487,
+      "estimated_mib": -172.80140610972427,
+      "false_negative": true,
+      "false_positive": false,
+      "heuristic_envelope_covers_reference": false,
+      "reference_mib": 15.917855631190605,
+      "regime": "R3",
+      "status": "KNOWN",
+      "uncertainty_mib": 2.0
+    }
+  ],
+  "rankings": [
+    {
+      "actual_best": "A",
+      "block": 100,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "B",
+      "block": 101,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "A",
+      "block": 102,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "B",
+      "block": 103,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "A",
+      "block": 104,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "B",
+      "block": 105,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "A",
+      "block": 106,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "B",
+      "block": 107,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R1"
+    },
+    {
+      "actual_best": "B",
+      "block": 100,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "A",
+      "block": 101,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "B",
+      "block": 102,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "A",
+      "block": 103,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "B",
+      "block": 104,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "A",
+      "block": 105,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "B",
+      "block": 106,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "A",
+      "block": 107,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R2"
+    },
+    {
+      "actual_best": "A",
+      "block": 100,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "B",
+      "block": 101,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "A",
+      "block": 102,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "B",
+      "block": 103,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "A",
+      "block": 104,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "B",
+      "block": 105,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "A",
+      "block": 106,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "A",
+      "regime": "R3"
+    },
+    {
+      "actual_best": "B",
+      "block": 107,
+      "correct": true,
+      "known": true,
+      "material_gap": true,
+      "predicted_best": "B",
+      "regime": "R3"
+    }
+  ],
+  "reference": {
+    "adverse_attempts": [],
+    "checkpoint_A_passed": true,
+    "failed_attempts": [],
+    "incomplete_blocks": [],
+    "kind": "matched_reference_characterization",
+    "limitations": [
+      "Bootstrap intervals resample independent matched seed blocks.",
+      "Reference contrasts are noisy; no exact donor ownership is inferred.",
+      "This characterization does not validate future-action predictions or controller superiority."
+    ],
+    "paired_effects": [
+      {
+        "attempts": {
+          "A": "20261020T221705Z-961ac31f",
+          "B": "20261020T221806Z-8abf2268",
+          "none": "20261020T221603Z-83fe90b2"
+        },
+        "block": 100,
+        "expected_better": "A",
+        "gain_A_mib": 31.273986460970036,
+        "gain_B_mib": -20.240409835729224,
+        "no_action_delta_mib": -2.149015333723355,
+        "regime": "R1",
+        "signed_gap_mib": 51.51439629669926
+      },
+      {
+        "attempts": {
+          "A": "20261020T215120Z-1fb40201",
+          "B": "20261020T215323Z-5a5b9784",
+          "none": "20261020T215221Z-911fa705"
+        },
+        "block": 101,
+        "expected_better": "B",
+        "gain_A_mib": 0.7453944794015115,
+        "gain_B_mib": 24.20682959061719,
+        "no_action_delta_mib": -4.138163872619543,
+        "regime": "R1",
+        "signed_gap_mib": 23.46143511121568
+      },
+      {
+        "attempts": {
+          "A": "20261020T221501Z-c38d974c",
+          "B": "20261020T221358Z-55e513a4",
+          "none": "20261020T221256Z-e3f30518"
+        },
+        "block": 102,
+        "expected_better": "A",
+        "gain_A_mib": 31.10380015446526,
+        "gain_B_mib": -1.1833772920801948,
+        "no_action_delta_mib": -1.6569458586964174,
+        "regime": "R1",
+        "signed_gap_mib": 32.287177446545456
+      },
+      {
+        "attempts": {
+          "A": "20261020T223029Z-792d9e54",
+          "B": "20261020T222824Z-d89ad456",
+          "none": "20261020T222925Z-4566d7f0"
+        },
+        "block": 103,
+        "expected_better": "B",
+        "gain_A_mib": -0.43242374238502634,
+        "gain_B_mib": 11.207913606503098,
+        "no_action_delta_mib": -2.782937469477929,
+        "regime": "R1",
+        "signed_gap_mib": 11.640337348888124
+      },
+      {
+        "attempts": {
+          "A": "20261020T215932Z-bb7cc088",
+          "B": "20261020T215831Z-82d61b91",
+          "none": "20261020T215728Z-093c49b1"
+        },
+        "block": 104,
+        "expected_better": "A",
+        "gain_A_mib": 29.84785009911434,
+        "gain_B_mib": 1.3885140869590487,
+        "no_action_delta_mib": -5.393206574906799,
+        "regime": "R1",
+        "signed_gap_mib": 28.45933601215529
+      },
+      {
+        "attempts": {
+          "A": "20261020T221154Z-ae0c65e0",
+          "B": "20261020T220951Z-ef8148f6",
+          "none": "20261020T221052Z-10b8f87e"
+        },
+        "block": 105,
+        "expected_better": "B",
+        "gain_A_mib": 3.3505934546210483,
+        "gain_B_mib": 29.41201565090728,
+        "no_action_delta_mib": -4.0385192153439675,
+        "regime": "R1",
+        "signed_gap_mib": 26.06142219628623
+      },
+      {
+        "attempts": {
+          "A": "20261020T223742Z-606dba60",
+          "B": "20261020T230034Z-e7111ccd",
+          "none": "20261020T223946Z-d090d11a"
+        },
+        "block": 106,
+        "expected_better": "A",
+        "gain_A_mib": 29.22534706318993,
+        "gain_B_mib": 0.7007182257091245,
+        "no_action_delta_mib": -2.673421376577835,
+        "regime": "R1",
+        "signed_gap_mib": 28.524628837480805
+      },
+      {
+        "attempts": {
+          "A": "20261020T213859Z-ad33a304",
+          "B": "20261020T214000Z-00609e18",
+          "none": "20261020T214103Z-56e39010"
+        },
+        "block": 107,
+        "expected_better": "B",
+        "gain_A_mib": -2.0539532352413516,
+        "gain_B_mib": 20.275376542713047,
+        "no_action_delta_mib": -1.7241185833893269,
+        "regime": "R1",
+        "signed_gap_mib": 22.3293297779544
+      },
+      {
+        "attempts": {
+          "A": "20261020T220747Z-380fc5fa",
+          "B": "20261020T220645Z-ca519f48",
+          "none": "20261020T220849Z-4749c7c9"
+        },
+        "block": 100,
+        "expected_better": "B",
+        "gain_A_mib": 0.3220680628539867,
+        "gain_B_mib": 16.986621289321874,
+        "no_action_delta_mib": -1.3790956327272852,
+        "regime": "R2",
+        "signed_gap_mib": 16.664553226467888
+      },
+      {
+        "attempts": {
+          "A": "20261020T214407Z-bdd41d04",
+          "B": "20261020T214204Z-b4a15c11",
+          "none": "20261020T214305Z-cdfe26d0"
+        },
+        "block": 101,
+        "expected_better": "A",
+        "gain_A_mib": 20.04988797950773,
+        "gain_B_mib": -0.9403947300586424,
+        "no_action_delta_mib": 1.721557750288639,
+        "regime": "R2",
+        "signed_gap_mib": 20.990282709566372
+      },
+      {
+        "attempts": {
+          "A": "20261020T220442Z-8aeb646b",
+          "B": "20261020T220340Z-df04ce31",
+          "none": "20261020T220543Z-0de5da3b"
+        },
+        "block": 102,
+        "expected_better": "B",
+        "gain_A_mib": 8.853770522301375,
+        "gain_B_mib": 31.793035094401603,
+        "no_action_delta_mib": -4.785812215993246,
+        "regime": "R2",
+        "signed_gap_mib": 22.939264572100228
+      },
+      {
+        "attempts": {
+          "A": "20261020T220135Z-0df9a9b7",
+          "B": "20261020T220238Z-b9e0facb",
+          "none": "20261020T220035Z-61604412"
+        },
+        "block": 103,
+        "expected_better": "A",
+        "gain_A_mib": 28.902736117479435,
+        "gain_B_mib": 1.1793972625071092,
+        "no_action_delta_mib": 1.531528452449038,
+        "regime": "R2",
+        "signed_gap_mib": 27.723338854972326
+      },
+      {
+        "attempts": {
+          "A": "20261020T223129Z-5a974902",
+          "B": "20261020T223233Z-a1044826",
+          "none": "20261020T223334Z-757e87d4"
+        },
+        "block": 104,
+        "expected_better": "B",
+        "gain_A_mib": -2.3084070917848294,
+        "gain_B_mib": 20.85165271058122,
+        "no_action_delta_mib": -2.427272010119168,
+        "regime": "R2",
+        "signed_gap_mib": 23.16005980236605
+      },
+      {
+        "attempts": {
+          "A": "20261020T222213Z-8fdd35aa",
+          "B": "20261020T222316Z-4a3413d4",
+          "none": "20261020T222417Z-42d0af99"
+        },
+        "block": 105,
+        "expected_better": "A",
+        "gain_A_mib": 33.449006332154795,
+        "gain_B_mib": -4.2133793118684935,
+        "no_action_delta_mib": -2.138369642229236,
+        "regime": "R2",
+        "signed_gap_mib": 37.66238564402329
+      },
+      {
+        "attempts": {
+          "A": "20261020T214508Z-6430e6fa",
+          "B": "20261020T214711Z-865dda31",
+          "none": "20261020T214610Z-c68e67d8"
+        },
+        "block": 106,
+        "expected_better": "B",
+        "gain_A_mib": 4.628950687644874,
+        "gain_B_mib": 23.142820771147854,
+        "no_action_delta_mib": -2.4048423914623527,
+        "regime": "R2",
+        "signed_gap_mib": 18.51387008350298
+      },
+      {
+        "attempts": {
+          "A": "20261020T215424Z-1d8b3f49",
+          "B": "20261020T215527Z-2a542ff6",
+          "none": "20261020T215628Z-cbc061d3"
+        },
+        "block": 107,
+        "expected_better": "A",
+        "gain_A_mib": 25.470699226659463,
+        "gain_B_mib": 2.4062865231724118,
+        "no_action_delta_mib": 2.327364785457121,
+        "regime": "R2",
+        "signed_gap_mib": 23.06441270348705
+      },
+      {
+        "attempts": {
+          "A": "20261020T213655Z-2516197f",
+          "B": "20261020T213757Z-96cb4b63",
+          "none": "20261020T213552Z-31cb7169"
+        },
+        "block": 100,
+        "expected_better": "A",
+        "gain_A_mib": 27.039948128261358,
+        "gain_B_mib": -6.097632599926328,
+        "no_action_delta_mib": -60.28247866907191,
+        "regime": "R3",
+        "signed_gap_mib": 33.137580728187686
+      },
+      {
+        "attempts": {
+          "A": "20261020T214915Z-86418b82",
+          "B": "20261020T214814Z-2f2a249f",
+          "none": "20261020T215018Z-c7a5f6b8"
+        },
+        "block": 101,
+        "expected_better": "B",
+        "gain_A_mib": -0.805802901463494,
+        "gain_B_mib": 20.648671858543366,
+        "no_action_delta_mib": -84.61904530880565,
+        "regime": "R3",
+        "signed_gap_mib": 21.45447476000686
+      },
+      {
+        "attempts": {
+          "A": "20261020T230136Z-e0236387",
+          "B": "20261020T224253Z-acd1533b",
+          "none": "20261020T224150Z-b0f25131"
+        },
+        "block": 102,
+        "expected_better": "A",
+        "gain_A_mib": 29.113257799416942,
+        "gain_B_mib": -7.894733780807655,
+        "no_action_delta_mib": -139.80636501893582,
+        "regime": "R3",
+        "signed_gap_mib": 37.0079915802246
+      },
+      {
+        "attempts": {
+          "A": "20261020T213348Z-64d54eba",
+          "B": "20261020T213450Z-cc4ae3ea",
+          "none": "20261020T213247Z-0a08d998"
+        },
+        "block": 103,
+        "expected_better": "B",
+        "gain_A_mib": 0.5149206209650856,
+        "gain_B_mib": 10.492717133528686,
+        "no_action_delta_mib": -185.53859915780026,
+        "regime": "R3",
+        "signed_gap_mib": 9.9777965125636
+      },
+      {
+        "attempts": {
+          "A": "20261020T222722Z-2d38d217",
+          "B": "20261020T222519Z-4b3aa798",
+          "none": "20261020T222620Z-7209952f"
+        },
+        "block": 104,
+        "expected_better": "A",
+        "gain_A_mib": 24.24382825206112,
+        "gain_B_mib": -9.965960240084542,
+        "no_action_delta_mib": -52.33080192742591,
+        "regime": "R3",
+        "signed_gap_mib": 34.20978849214566
+      },
+      {
+        "attempts": {
+          "A": "20261020T212942Z-0dda506f",
+          "B": "20261020T213043Z-97aa7045",
+          "none": "20261020T213145Z-1e536f3c"
+        },
+        "block": 105,
+        "expected_better": "B",
+        "gain_A_mib": -6.654622296603293,
+        "gain_B_mib": 16.534631275264474,
+        "no_action_delta_mib": -83.82024024717361,
+        "regime": "R3",
+        "signed_gap_mib": 23.189253571867766
+      },
+      {
+        "attempts": {
+          "A": "20261020T222112Z-3405ae91",
+          "B": "20261020T222009Z-a78b3aec",
+          "none": "20261020T221908Z-7e43a0d0"
+        },
+        "block": 106,
+        "expected_better": "A",
+        "gain_A_mib": 27.21591862057153,
+        "gain_B_mib": -9.361138514916775,
+        "no_action_delta_mib": -141.22055869382712,
+        "regime": "R3",
+        "signed_gap_mib": 36.5770571354883
+      },
+      {
+        "attempts": {
+          "A": "20261020T223435Z-0c0135c9",
+          "B": "20261020T223538Z-faa127b3",
+          "none": "20261020T223639Z-cfccd5bd"
+        },
+        "block": 107,
+        "expected_better": "B",
+        "gain_A_mib": 0.9227929079875139,
+        "gain_B_mib": 15.917855631190605,
+        "no_action_delta_mib": -185.8803906480764,
+        "regime": "R3",
+        "signed_gap_mib": 14.995062723203091
+      }
+    ],
+    "regimes": {
+      "R1": {
+        "at_least_8_independent_blocks": true,
+        "ci95": [
+          21.48893276888475,
+          35.727252150351205
+        ],
+        "gain_A": {
+          "ci95": [
+            4.435273961698357,
+            26.402708545822435
+          ],
+          "mean": 15.382574341766968,
+          "n": 8
+        },
+        "gain_B": {
+          "ci95": [
+            -2.4854051363049052,
+            18.34591694856968
+          ],
+          "mean": 8.220947571949921,
+          "n": 8
+        },
+        "interval_excludes_zero": true,
+        "mean": 28.034757878403155,
+        "n": 8,
+        "no_action_sd_mib": 1.329462925077999,
+        "practical_8mib_gap": true
+      },
+      "R2": {
+        "at_least_8_independent_blocks": true,
+        "ci95": [
+          20.159480842562346,
+          28.30489013574558
+        ],
+        "gain_A": {
+          "ci95": [
+            6.141175381680398,
+            23.771069236074908
+          ],
+          "mean": 14.921088979602104,
+          "n": 8
+        },
+        "gain_B": {
+          "ci95": [
+            2.9972992123323934,
+            20.344425258566275
+          ],
+          "mean": 11.400754951150617,
+          "n": 8
+        },
+        "interval_excludes_zero": true,
+        "mean": 23.839770949560773,
+        "n": 8,
+        "no_action_sd_mib": 2.5254354708211406,
+        "practical_8mib_gap": true
+      },
+      "R3": {
+        "at_least_8_independent_blocks": true,
+        "ci95": [
+          19.557925810742063,
+          32.83112369114343
+        ],
+        "gain_A": {
+          "ci95": [
+            2.626171625612699,
+            22.985922481046487
+          ],
+          "mean": 12.698780141399595,
+          "n": 8
+        },
+        "gain_B": {
+          "ci95": [
+            -5.020843886424558,
+            12.311129917247143
+          ],
+          "mean": 3.784301345348979,
+          "n": 8
+        },
+        "interval_excludes_zero": true,
+        "mean": 26.318625687960946,
+        "n": 8,
+        "no_action_sd_mib": 53.580962007989605,
+        "practical_8mib_gap": true
+      }
+    },
+    "technical_invalid_attempts": [
+      {
+        "attempt": "20261020T223845Z-0c675bb2",
+        "reasons": [
+          "generator_schedule_overloaded"
+        ]
+      },
+      {
+        "attempt": "20261020T224049Z-d5ca6d0c",
+        "reasons": [
+          "generator_schedule_overloaded"
+        ]
+      }
+    ],
+    "total_attempts": 74,
+    "unit": "MiB"
+  },
+  "regimes": {
+    "R1": {
+      "absolute_error_mib": {
+        "ci95": [
+          2.8681281936283134,
+          4.904325456193424
+        ],
+        "mean": 3.892347633712319,
+        "n": 8
+      },
+      "correct_rankings": 8,
+      "envelope_coverage": 0.25,
+      "false_negative_count": 0,
+      "false_positive_count": 1,
+      "known_probes": 16,
+      "material_pairs": 8,
+      "n_probes": 16,
+      "probe_coverage": 1.0,
+      "ranked_pairs": 8,
+      "ranking_accuracy": 1.0,
+      "ranking_ci95": [
+        0.6755924351161318,
+        1.0
+      ]
+    },
+    "R2": {
+      "absolute_error_mib": {
+        "ci95": [
+          2.311059532237296,
+          4.274491405406128
+        ],
+        "mean": 3.278488608173208,
+        "n": 8
+      },
+      "correct_rankings": 8,
+      "envelope_coverage": 0.4375,
+      "false_negative_count": 0,
+      "false_positive_count": 1,
+      "known_probes": 16,
+      "material_pairs": 8,
+      "n_probes": 16,
+      "probe_coverage": 1.0,
+      "ranked_pairs": 8,
+      "ranking_accuracy": 1.0,
+      "ranking_ci95": [
+        0.6755924351161318,
+        1.0
+      ]
+    },
+    "R3": {
+      "absolute_error_mib": {
+        "ci95": [
+          82.4143835187437,
+          152.02316719920708
+        ],
+        "mean": 116.5376588156761,
+        "n": 8
+      },
+      "correct_rankings": 8,
+      "envelope_coverage": 0.0,
+      "false_negative_count": 8,
+      "false_positive_count": 0,
+      "known_probes": 16,
+      "material_pairs": 8,
+      "n_probes": 16,
+      "probe_coverage": 1.0,
+      "ranked_pairs": 8,
+      "ranking_accuracy": 1.0,
+      "ranking_ci95": [
+        0.6755924351161318,
+        1.0
+      ]
+    }
+  }
+}

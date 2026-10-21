@@ -1,0 +1,3222 @@
+{
+  "kind": "discovery",
+  "randomization_seed": 20261021,
+  "runs": [
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 1,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1001
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2001
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 0,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1000
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2000
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 5,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1005
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 2005
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2004
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 3,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1003
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2003
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 4,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-after": 26,
+          "reuse-mib": 512,
+          "seed": 1004
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 2048,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2004
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R2",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 7,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 1007
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 2007
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3007
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 6,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1006
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2006
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R1",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "A",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "none",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    },
+    {
+      "actuator_timeout_seconds": 5,
+      "arm": "B",
+      "block": 2,
+      "donors": {
+        "A": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "structured",
+          "reuse-mib": 512,
+          "seed": 1002
+        },
+        "B": {
+          "hot-mib": 32,
+          "mib": 512,
+          "pages-per-tick": 128,
+          "pattern": "random",
+          "reuse-mib": 512,
+          "seed": 2002
+        },
+        "interference": {
+          "allocate-after": 29,
+          "extra-mib": 192,
+          "hot-mib": 8,
+          "mib": 32,
+          "pattern": "random",
+          "release-after": 39,
+          "reuse-mib": 32,
+          "seed": 3002
+        }
+      },
+      "foreground": {
+        "max_outstanding": 64,
+        "mib": 128,
+        "rate": 200,
+        "timeout_seconds": 2,
+        "touches": 65536
+      },
+      "generator_lateness_limit_seconds": 0.1,
+      "horizon_seconds": 20,
+      "policy": "reference",
+      "poll_seconds": 0.25,
+      "pre_seconds": 20,
+      "purpose": "discovery",
+      "recovery_seconds": 5,
+      "regime": "R3",
+      "request_bytes": 33554432,
+      "swappiness_max": false,
+      "warmup_seconds": 5
+    }
+  ]
+}

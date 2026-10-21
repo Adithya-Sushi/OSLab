@@ -1,0 +1,11 @@
+{
+  "A_passed": true,
+  "B_passed": false,
+  "B_reasons": [
+    "R1: uncertainty envelope does not cover reference effects reliably",
+    "R2: uncertainty envelope does not cover reference effects reliably",
+    "R3: benefit error exceeds practical 8-MiB resolution",
+    "R3: uncertainty envelope does not cover reference effects reliably"
+  ],
+  "C_passed": false
+}

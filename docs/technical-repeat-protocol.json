@@ -1,0 +1,10 @@
+{
+  "changes_to_estimator_or_thresholds": false,
+  "eligible_original_attempts": [
+    "20261020T223845Z-0c675bb2",
+    "20261020T224049Z-d5ca6d0c"
+  ],
+  "maximum_repeats_per_invalid_arm": 3,
+  "reason": "Two scheduled held-out arms exceeded the predeclared 100-ms generator lateness limit. Preserve both originals; repeat only these technical-invalid arms, with the exact original frozen source, settings and seeds. Do not repeat an adverse outcome merely because it is unfavorable.",
+  "runtime_sha256": "9c97540f4796907fac1ba63434890fc63f04ccaa4fde0dcc9d83b07a38c6d7a5"
+}
