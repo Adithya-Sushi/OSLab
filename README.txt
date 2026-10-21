@@ -71,7 +71,7 @@ The runner rejects reuse of a guest boot ID. Do not bypass this check for matche
 research arms. The one-page initialized swap header is allowed; used logical
 swap or other stored data at the starting check is rejected.
 
-Analyze and rebuild the draft
+Analyze saved results
 -------------------------------
   python3 -m analysis.reference_effects
   python3 -m analysis.trial_outcomes
@@ -79,15 +79,11 @@ Analyze and rebuild the draft
   python3 -m analysis.horizon_sensitivity
   python3 -m analysis.write_report
   MPLCONFIGDIR="$PWD/tools/mpl-cache" .venv/bin/python -m analysis.plot_results
-  python3 paper/build_draft.py
-  ./tools/tectonic --outdir paper paper/OSLab_IEEE_Initial_Draft.tex
 
 The experiment harness and statistical primitives need only Python's standard
 library. Figures require matplotlib; requirements-analysis.txt records the
-installed analysis packages. Any normal TeX Live installation containing IEEEtran
-can build the standalone paper source. Numeric results are generated from the
-saved selected runs; no external figures or bibliography files are required by
-the standalone .tex file.
+installed analysis packages. Numeric results are generated from the saved
+selected runs, which require the separately saved experiment-data bundle.
 
 Interpretation
 ----------------
@@ -115,9 +111,7 @@ Checkpoint A passed; E1 failed Checkpoint B because its uncertainty envelope was
 unreliable and its interference attribution error was large. No coordinated
 policy, strong-baseline or full confirmatory results are claimed. The VM is off.
 
-The final paper is output/pdf/OSLab_IEEE_Initial_Draft.pdf. The standalone source
-is paper/OSLab_IEEE_Initial_Draft.tex. output/SHA256SUMS covers the PDF, source ZIP
-and data ZIP. results/derived/EXPERIMENT_REPORT.txt explains the actual findings.
+results/derived/EXPERIMENT_REPORT.txt explains the actual findings.
 
 Reproduction and source versions
 ---------------------------------
@@ -156,5 +150,3 @@ the data ZIP, not the clean source ZIP. Audit a combined source/data checkout:
   python3 -m analysis.verify_artifact
 
 Guest provisioning downloads packages and requires network access on first boot.
-Use an ordinary TeX Live installation, or obtain Tectonic from its official release
-and verify docs/tool-provenance.json, before running the PDF rebuild command.

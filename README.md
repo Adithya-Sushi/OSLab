@@ -44,8 +44,6 @@ See the [experiment report](results/derived/EXPERIMENT_REPORT.txt) and [implemen
 | `scripts/` and `vm/` | Dedicated guest setup and launcher source |
 | `docs/` | Project explanation, protocols, planning documents and exact executed source snapshots |
 | `results/derived/` and `results/figures/` | Selected saved result summaries, test records and figures |
-| `paper/` | Editable IEEE paper source and build scripts |
-| `output/pdf/` | Initial IEEE paper draft |
 
 The raw experiment traces, completed execution queues, VM disks, downloaded tools and local Word-report editing files are not included in this source repository. The source and analysis can be inspected and built from this checkout. Recomputing the reported numbers requires the separately saved experiment-data bundle; the summary files alone are not the raw data.
 

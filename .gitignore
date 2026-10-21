@@ -33,3 +33,5 @@ output/*
 output/pdf/*
 !output/pdf/OSLab_IEEE_Initial_Draft.pdf
 paper/*.pdf
+paper/
+output/pdf/
